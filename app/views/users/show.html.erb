@@ -5,3 +5,11 @@
   <h3>Name:</h3><%= @user.name %>
   <h3>email:</h3><%= @user.email %>
 </div>
+
+<div>
+  <h3>Posts:</h3>
+
+  <% @posts.each do |post| %>
+  <%=link_to post.title, user_post_path(@user,post) %> <br>
+  <%end%>
+</div>
