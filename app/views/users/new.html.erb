@@ -1,2 +1,24 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>Become a Vagabond</h1>
+<%= form_for @user, url: '/users' do |f|%>
+<div>
+
+    <%= f.text_field :name, placeholder: 'name'%>
+</div>
+<div>
+    <%= f.text_field :profile_photo, placeholder: 'profile photo url' %>
+</div>
+<div>
+    <%= f.text_field :current_city, placeholder: 'where are you now' %>
+</div>
+<div>
+    <%= f.email_field :email, placeholder: 'email' %>
+</div>
+<div>
+    <%= f.password_field :password, placeholder: 'password' %>
+</div>
+<div>
+    <%= f.password_field :password_confirm, placeholder: 'confirm password' %>
+</div>
+
+<%= f.submit 'Join'%>
+<% end %>
