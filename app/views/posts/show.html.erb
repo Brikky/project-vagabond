@@ -7,4 +7,7 @@
   <div>
     <%= @post.text_body %>
   </div>
+  <div>
+    <%= link_to 'Revise', edit_user_post_path(@user, @post)%>
+  </div>
 </div>
