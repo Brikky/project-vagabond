@@ -1,2 +1,11 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<h1>Edit Your Story</h1>
+<p style = "font-size:1px">GET YOUR ShIT TOGETHER</p>
+<%= form_for [@user, @post] do |f| %>
+<%= f.text_field :title, placeholder: 'title' %>
+<br>
+<%= f.text_field :photo, placeholder: 'image url' %>
+<br>
+<%= f.text_area :text_body, placeholder: 'this one time, in band camp...' %>
+<br>
+<%= f.submit %>
+<% end %>

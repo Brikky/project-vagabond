@@ -1,2 +1,10 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<h1>Tell Your Story</h1>
+<%= form_for [@user, @post] do |f| %>
+<%= f.text_field :title, placeholder: 'title' %>
+<br>
+<%= f.text_field :photo, placeholder: 'image url' %>
+<br>
+<%= f.text_area :text_body, placeholder: 'this one time, in band camp...' %>
+<br>
+<%= f.submit %>
+<% end %>

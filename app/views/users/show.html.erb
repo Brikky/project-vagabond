@@ -6,7 +6,7 @@
   <h3>email:</h3><%= @user.email %>
   <h3>member since:</h3><%= @user.created_at.to_date %>
   <div class = 'button-container'>
-  <%= link_to 'Edit Profile', edit_user_path %>
+  <%= link_to 'Edit Profile', edit_user_path(@user) %>
   </div>
 </div>
 
