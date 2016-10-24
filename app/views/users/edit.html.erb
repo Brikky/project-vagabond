@@ -1,2 +1,15 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>Change Your Path</h1>
+
+<%= form_for @user do |f|%>
+<div>
+    <label for="name">Name: </label><%= f.text_field :name, placeholder: 'name'%>
+</div>
+<div>
+    <label for="profile_photo">Profile Photo: </label><%= f.text_field :profile_photo, placeholder: 'profile photo url' %>
+</div>
+<div>
+    <label for="current_city">Current City: </label><%= f.text_field :current_city, placeholder: 'where are you now' %>
+</div>
+
+<%= f.submit 'Change'%>
+<% end %>
