@@ -1,2 +1,10 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<h1>Welcome to Vagabond Tales</h1>
+<div class="personal-info">
+  <%= image_tag @post.photo, height: '100' %>
+  <h3><%= @post.title %></h3>
+  <h5><%= link_to @user.name, user_path%>
+  </h5>
+  <div>
+    <%= @post.text_body %>
+  </div>
+</div>
