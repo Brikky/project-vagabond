@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'cities/index'
-
-  get 'cities/show'
-
-  get 'cities/new'
 
   resources :users do
     resources :posts

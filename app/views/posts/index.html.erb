@@ -6,6 +6,7 @@
 <%= link_to 'tell your own', login_path %>
 <% end %>
 
+
 <% @posts.each do |post| %>
 <div>
   <% if params[:city_id] %>
@@ -18,3 +19,17 @@
   <%= post.text_body %>
 </div>
 <%end%>
+
+<% if Post.all.length > 10 %>
+<div>
+ <%= will_paginate(@posts,:previous_label => "&laquo;", :next_label => "&raquo;",:class=>"small-font",:outer_window => 1,:inner_window => 0) %>
+</div>
+
+<div>
+  <%= page_entries_info(@posts) %>
+</div>
+</div>
+
+<% will_paginate @posts %>
+
+<% end %>
