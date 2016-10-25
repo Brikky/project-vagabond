@@ -15,6 +15,13 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.create(post_params)
+    if @post.user_id && !@post.city_id
+      @post.city_id = params[:post][:city_id].to_i
+    end
+    if @post.photo == ''
+      @post.photo = @post.city.photo
+    end
+    @post.save
     redirect_to user_post_path(current_user,@post)
   end
 
@@ -28,6 +35,11 @@ class PostsController < ApplicationController
     @user = current_user
     @post.update(post_params)
     redirect_to user_post_path(@user, @post)
+  end
+  def destroy
+    post = Post.find(params[:post_id])
+    post.delete
+    redirect_to :back
   end
 
   private
