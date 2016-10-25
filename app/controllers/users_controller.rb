@@ -11,6 +11,7 @@ class UsersController < ApplicationController
       @user.profile_photo = 'https://s11.postimg.org/pja7dqo3n/vagabunny.png'
     end
     if @user.save
+      login(@user)
       flash[:success] = 'Welcome to Vagabond!'
       redirect_to user_path(@user)
     else
@@ -22,6 +23,7 @@ class UsersController < ApplicationController
 
   def show
     @posts = @user.posts
+    city = City.find_by({name: @user.current_city})
   end
 
   def index
