@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
+  get 'cities/index'
+
+  get 'cities/show'
+
+  get 'cities/new'
+
   resources :users do
+    resources :posts
+  end
+  resources :cities do
     resources :posts
   end
 

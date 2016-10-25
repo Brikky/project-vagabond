@@ -1,0 +1,11 @@
+<h1>Cities#show</h1>
+<p>Find me in app/views/cities/show.html.erb</p>
+<%=image_tag @city.photo, height: "400"%>
+<%=link_to 'New Post! Hooray', new_city_post_path(@city), method: :get, class:'button'%>
+<h3><%= @city.name%> , <%= @city.state %></h3>
+<% @posts.each do |post| %>
+<h4><%= post.title %></h4>
+<div> <%= post.text_body[0..1000] %></div>
+<%= link_to 'Read More', city_post_path(@city,post) %>
+
+<% end %>
