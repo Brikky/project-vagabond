@@ -1,19 +1,26 @@
 class UsersController < ApplicationController
+  before_action :get_user, only: [:show, :edit, :update]
+
   def new
     @user = User.new
   end
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
     if @user.profile_photo == ''
       @user.profile_photo = 'https://s11.postimg.org/pja7dqo3n/vagabunny.png'
-      @user.save
     end
-    redirect_to user_path(@user)
+    if @user.save
+      flash[:success] = 'Welcome to Vagabond!'
+      redirect_to user_path(@user)
+    else
+      flash[:error] = @user.errors.full_messages.to_sentence
+      render :new
+    end
+    
   end
 
   def show
-    @user = User.find(params[:id])
     @posts = @user.posts
   end
 
@@ -22,13 +29,17 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     @user.update(user_params)
     redirect_to user_path(@user)
+  end
+
+  private
+
+  def get_user
+    @user = User.find(params[:id])
   end
 
 end

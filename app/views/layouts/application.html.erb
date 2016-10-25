@@ -29,6 +29,21 @@
                 <% end %>
             </div>
         </header>
+        <div class='messages'>
+            <% flash.each do |name, msg| %>
+              <% if name == 'success' %>
+                <div class='flash-success'> 
+                  </br>
+                  <p><strong><%= name.upcase %></strong>: <%= msg %></p>
+                </div>
+              <% else %>
+                <div class='flash-error'> 
+                  </br>
+                  <p><strong><%= name.upcase %></strong>: <%= msg %></p>
+                </div>
+              <% end %>
+             <% end %> 
+        </div>
         <%= yield %>
     </body>
 </html>
