@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
   def show
     @posts = @user.posts
-    @city = City.find_by({name: @user.current_city})
+    @city = City.find_by_id(@user.current_city)
   end
 
   def index

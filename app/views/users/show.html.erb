@@ -1,7 +1,7 @@
 <h1>Welcome to Vagabond Tales, <%= @user.name %> </h1>
 <div class="personal-info">
   <%= image_tag @user.profile_photo, height: '100' %>
-  <h3>Current City:</h3><%= link_to @user.current_city, city_path(@city) %>
+  <h3>Current City:</h3><%= link_to @city.name, city_path(@city) %>
   <h3>Name:</h3><%= @user.name %>
   <h3>email:</h3><%= @user.email %>
   <h3>member since:</h3><%= @user.created_at.to_date %>

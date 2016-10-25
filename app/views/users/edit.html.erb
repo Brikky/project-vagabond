@@ -8,7 +8,7 @@
     <label for="profile_photo">Profile Photo: </label><%= f.text_field :profile_photo, placeholder: 'profile photo url' %>
 </div>
 <div>
-    <label for="current_city">Current City: </label><%= f.collection_select :current_city, City.all, :name, :name%>
+    <label for="current_city">Current City: </label><%= f.collection_select :current_city, City.all, :id, :name%>
     <%= link_to 'Add New City', new_city_path %>
 </div>
 
