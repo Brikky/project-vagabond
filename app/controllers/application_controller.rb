@@ -8,4 +8,11 @@ class ApplicationController < ActionController::Base
     params.require(:user).permit(:name, :email, :current_city, :password, :profile_photo)
   end
 
+  def logged_in?
+    unless current_user
+      redirect_to login_path
+    end
+      
+  end
+
 end
