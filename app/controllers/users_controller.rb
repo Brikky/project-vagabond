@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :get_user, only: [:show, :edit, :update]
+  before_action :logged_in?, only: [:show, :edit, :update]
 
   def new
     @user = User.new
@@ -23,7 +24,7 @@ class UsersController < ApplicationController
 
   def show
     @posts = @user.posts
-    city = City.find_by({name: @user.current_city})
+    @city = City.find_by_id(@user.current_city)
   end
 
   def index
@@ -34,7 +35,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(user_params)
+    @user.update_attribute(:name, params[:user][:name])
+    @user.update_attribute(:current_city, params[:user][:current_city])
+    @user.update_attribute(:profile_photo, params[:user][:profile_photo])
     redirect_to user_path(@user)
   end
 
@@ -44,8 +47,12 @@ class UsersController < ApplicationController
     if current_user
       @user = current_user
     else
-      @user = User.find(params[:id])
+      redirect_to login_path
     end
+  end
+
+  def edit_user_params
+    params.require(:user).permit(:name,:current_city,:profile_photo)
   end
 
 end
