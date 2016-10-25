@@ -39,7 +39,11 @@ class UsersController < ApplicationController
   private
 
   def get_user
-    @user = User.find(params[:id])
+    if current_user
+      @user = current_user
+    else
+      @user = User.find(params[:id])
+    end
   end
 
 end

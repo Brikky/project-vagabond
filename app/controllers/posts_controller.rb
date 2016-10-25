@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @post = current_user.posts.create(post_params)
     if @post.user_id && !@post.city_id
       @post.city_id = params[:post][:city_id].to_i
@@ -21,8 +22,13 @@ class PostsController < ApplicationController
     if @post.photo == ''
       @post.photo = @post.city.photo
     end
-    @post.save
-    redirect_to user_post_path(current_user,@post)
+    if @post.save
+      flash[:success] = "That's a great story!"
+      redirect_to user_post_path(current_user,@post)
+    else
+      flash[:error] = @post.errors.full_messages.to_sentence
+      render :new
+    end
   end
 
   def edit

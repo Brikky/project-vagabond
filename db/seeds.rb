@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create(name: 'Banana', email: 'banana@fruit.com', password: 'asdf', current_city: 'San Francisco', profile_photo: '')
-user2 = User.create(name: 'Apple', email: 'apple@fruit.com', password: 'asdf', current_city: 'San Francisco', profile_photo: '')
+user = User.create(name: 'Banana', email: 'banana@fruit.com', password: 'password', current_city: 'San Francisco', profile_photo: '')
+user2 = User.create(name: 'Apple', email: 'apple@fruit.com', password: 'password', current_city: 'San Francisco', profile_photo: '')
 city = City.create(name: 'San Francisco', country: 'Amurica', state: 'California', photo: 'http://foundtheworld.com/wp-content/uploads/2016/08/San-Francisco-6.jpg')
 post = user.posts.create(
 [

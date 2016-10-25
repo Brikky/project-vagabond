@@ -10,10 +10,11 @@
   </div>
 </div>
 
-<div>
-  <h3>Posts:</h3>
 
+<div>
+  <%= link_to 'Add Your Story', new_user_post_path(@user)%>
   <% @posts.each do |post| %>
+  <h3>Posts:</h3>
   <%=link_to post.title, user_post_path(@user,post) %> <br>
   <%end%>
 </div>

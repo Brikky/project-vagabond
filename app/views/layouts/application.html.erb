@@ -24,6 +24,9 @@
                 <% else %>
                 <!--  -->
                 <span>
+                    <%= link_to 'Your Profile', user_path(current_user) %>
+                </span>
+                <span>
                     <%= link_to 'Log Out', logout_path %>
                 </span>
                 <% end %>
