@@ -12,7 +12,11 @@ class PostsController < ApplicationController
   end
 
   def index
+    if Post.all.length <= 10
       @posts = Post.all
+    else
+      @posts = Post.paginate(:page => params[:page], :per_page => 10)
+    end
   end
 
   def create
