@@ -8,7 +8,7 @@
 
 <% @posts.each do |post| %>
 <div>
-  <%=image_tag post.photo, height: '75'%> <h3><%= post.title %></h3><br>
+  <%=image_tag post.photo, height: '75'%> <h3><%= link_to post.title, request.env['PATH_INFO']+"/#{post.id}"  %></h3><br>
   <%= post.text_body %>
 </div>
 <%end%>

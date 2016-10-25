@@ -9,5 +9,6 @@
   </div>
   <div>
     <%= link_to 'Revise', edit_user_post_path(@user, @post)%>
+    <%= button_to 'Repress memory', user_post_path(@user, @post), method: :delete, data: {confirm: "Are you sure you want to delete #{@post.title}"}%>
   </div>
 </div>

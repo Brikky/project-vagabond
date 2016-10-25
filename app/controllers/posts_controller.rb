@@ -36,6 +36,11 @@ class PostsController < ApplicationController
     @post.update(post_params)
     redirect_to user_post_path(@user, @post)
   end
+  def destroy
+    post = Post.find(params[:post_id])
+    post.delete
+    redirect_to :back
+  end
 
   private
 
