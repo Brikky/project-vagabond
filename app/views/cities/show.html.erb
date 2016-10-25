@@ -1,8 +1,6 @@
-<h1>Cities#show</h1>
-<p>Find me in app/views/cities/show.html.erb</p>
-<%=image_tag @city.photo, height: "400"%>
+<h1><%= @city.name %>, <%= @city.state %></h1>
+<%=image_tag @city.photo, height: "400"%></br>
 <%=link_to 'New Post! Hooray', new_city_post_path(@city), method: :get, class:'button'%>
-<h3><%= @city.name %>, <%= @city.state %></h3>
 <% @posts.each do |post| %>
 <h4><%= post.title %></h4>
 Posted <%= (DateTime.now.to_date - post.created_at.to_date).to_i%> days ago

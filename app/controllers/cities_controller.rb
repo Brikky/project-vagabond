@@ -12,9 +12,16 @@ class CitiesController < ApplicationController
   def new
     @city = City.new
   end
+  
   def create
-    @city = City.create(city_params)
-    redirect_to city_path(@city)
+    @city = City.new(city_params)
+    if @city.save
+      flash[:success] = 'Thanks for exploring this City!'
+      redirect_to city_path(@city)
+    else
+      flash[:error] = @city.errors.full_messages.to_sentence
+      render :new
+    end
   end
 
   private

@@ -1,7 +1,8 @@
 <h1>Welcome to Vagabond Tales, <%= @user.name %> </h1>
 <div class="personal-info">
   <%= image_tag @user.profile_photo, height: '100' %>
-  <h3>Current City:</h3><%= @user.current_city %>
+  <% city = City.find_by({name: @user.current_city}) %>
+  <h3>Current City:</h3><%= link_to @user.current_city, city_path(city) %>
   <h3>Name:</h3><%= @user.name %>
   <h3>email:</h3><%= @user.email %>
   <h3>member since:</h3><%= @user.created_at.to_date %>
@@ -10,10 +11,11 @@
   </div>
 </div>
 
-<div>
-  <h3>Posts:</h3>
 
+<div>
+  <%= link_to 'Add Your Story', new_user_post_path(@user)%>
   <% @posts.each do |post| %>
+  <h3>Posts:</h3>
   <%=link_to post.title, user_post_path(@user,post) %> <br>
   <%end%>
 </div>

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       login(user)
       redirect_to user
     else
-      flash[:message] = 'email or password not found'
+      flash[:error] = 'Email or password not found'
       render :new
   end
 end
