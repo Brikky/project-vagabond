@@ -3,7 +3,6 @@
     <head>
         <title>Vagabond</title>
         <%= csrf_meta_tags %>
-
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
@@ -35,17 +34,17 @@
         <div class='messages'>
             <% flash.each do |name, msg| %>
               <% if name == 'success' %>
-                <div class='flash-success'> 
+                <div class='alert-success'>
                   </br>
-                  <p><strong><%= name.upcase %></strong>: <%= msg %></p>
+                  <p><%= msg %></p>
                 </div>
               <% else %>
-                <div class='flash-error'> 
+                <div class='alert-error'>
                   </br>
-                  <p><strong><%= name.upcase %></strong>: <%= msg %></p>
+                  <p><%= msg %></p>
                 </div>
               <% end %>
-             <% end %> 
+             <% end %>
         </div>
         <%= yield %>
     </body>

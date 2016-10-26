@@ -1,5 +1,5 @@
 <h1>Tell Your Story</h1>
-<%= form_for [@user, @post] do |f| %>
+<%= form_for @post do |f| %>
 <%= f.text_field :title, placeholder: 'title' %>
 <br>
 <% unless params[:city_id] %>

@@ -8,29 +8,32 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @user = current_user
+    @user = User.find(@post.user_id)
   end
 
   def index
-    if Post.all.length <= 10
-      @posts = Post.all
-    else
-      @posts = Post.paginate(:page => params[:page], :per_page => 10)
-    end
+    @posts = if !params[:user_id].nil?
+               User.find_by(name: params[:user_id]).posts
+             else
+               Post.all
+             end
+
+    # if @posts.length > 10
+    #   @posts = Post.paginate(page: params[:page], per_page: 10)
+    # end
   end
 
   def create
     @user = current_user
     @post = current_user.posts.create(post_params)
-    if @post.user_id && !@post.city_id
-      @post.city_id = params[:post][:city_id].to_i
-    end
-    if @post.photo == ''
-      @post.photo = @post.city.photo
-    end
+
+    @post.city_id = params[:post][:city_id].to_i if @post.user_id && !@post.city_id
+
+    @post.photo = @post.city.photo if @post.photo == ''
+
     if @post.save
       flash[:success] = "That's a great story!"
-      redirect_to user_post_path(current_user,@post)
+      redirect_to post_path(@post)
     else
       flash[:error] = @post.errors.full_messages.to_sentence
       render :new
@@ -39,19 +42,18 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    @user = current_user
   end
 
   def update
     @post = Post.find(params[:id])
-    @user = current_user
     @post.update(post_params)
-    redirect_to user_post_path(@user, @post)
+    redirect_to post_path(@post)
   end
+
   def destroy
-    post = Post.find(params[:post_id])
-    post.delete
-    redirect_to :back
+    @post = Post.find(params[:id])
+    @post.delete
+    redirect_to user_path(current_user)
   end
 
   private
