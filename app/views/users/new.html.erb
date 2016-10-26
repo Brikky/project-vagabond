@@ -7,7 +7,7 @@
     <%= f.text_field :profile_photo, placeholder: 'profile photo url' %>
 </div>
 <div>
-    <%= f.collection_select :current_city, City.all, :id, :name%> <%#= TODO: Add State validation %>
+    <%= f.collection_select :current_city, City.all, :id, :name_state%> 
     <%= link_to 'Add New City', new_city_path %>
 </div>
 <div>
