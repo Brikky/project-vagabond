@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   before_action :get_user, only: [:show, :edit, :update]
   before_action :logged_in?, only: [:show, :edit, :update]
 
@@ -19,12 +20,12 @@ class UsersController < ApplicationController
       flash[:error] = @user.errors.full_messages.to_sentence
       render :new
     end
-    
+
   end
 
   def show
     @posts = @user.posts
-    @city = City.find_by_id(@user.current_city)
+    @city = City.friendly.find_by_id(@user.current_city)
   end
 
   def index
