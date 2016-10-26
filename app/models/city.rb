@@ -6,4 +6,8 @@ class City < ApplicationRecord
   # extend FriendlyId
   # friendly_id :name, use: :slugged
 
+  def name_state
+    "#{self.name}, #{self.state}"
+  end
+
 end

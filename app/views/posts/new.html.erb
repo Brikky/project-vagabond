@@ -3,7 +3,7 @@
 <%= f.text_field :title, placeholder: 'title' %>
 <br>
 <% unless params[:city_id] %>
-<%= f.collection_select :city_id, City.all, :id, :name%>
+<%= f.collection_select :city_id, City.all, :id, :name_state%>
 <%= link_to 'Add New City', new_city_path %>
 <br>
 <% else %>
