@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :get_user, only: [:show, :edit, :update]
+  before_action :get_user, only: [:edit, :update]
   before_action :logged_in?, only: [:show, :edit, :update]
 
   def new
@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
     @posts = @user.posts
     @city = City.find_by_id(@user.current_city)
   end
