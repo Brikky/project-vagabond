@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-
-  before_action :get_user, only: [:show, :edit, :update]
+  before_action :get_user, only: [:edit, :update]
   before_action :logged_in?, only: [:show, :edit, :update]
 
   def new
@@ -20,12 +19,16 @@ class UsersController < ApplicationController
       flash[:error] = @user.errors.full_messages.to_sentence
       render :new
     end
-
   end
 
   def show
+    @user = User.find(params[:id])
     @posts = @user.posts
     @city = City.find_by_id(@user.current_city)
+
+    @user_cities = @posts.pluck(:city_id)
+    @post_count = instance_count(@user_cities)
+    @city_with_post_count = @post_count.map {|k,v| [City.find(k).name, v]}.to_h
   end
 
   def index
@@ -53,7 +56,15 @@ class UsersController < ApplicationController
   end
 
   def edit_user_params
-    params.require(:user).permit(:name,:current_city,:profile_photo)
+    params.require(:user).permit(:name, :current_city, :profile_photo)
   end
 
+  def instance_count(array)
+    counts = Hash.new 0
+
+    array.each do |item|
+      counts[item] += 1
+    end
+    counts
+  end
 end

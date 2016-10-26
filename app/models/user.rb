@@ -11,8 +11,8 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, email: true, presence: true
   validates :password, length: { minimum: 6 }
 
-  extend FriendlyId
-  friendly_id :name, use: :slugged
+  # extend FriendlyId
+  # friendly_id :name, use: :slugged
 
   def self.confirm(params)
     @user = User.find_by(email: params[:email])
