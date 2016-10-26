@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.profile_photo == ''
-      @user.profile_photo = 'https://s11.postimg.org/pja7dqo3n/vagabunny.png'
+      @user.profile_photo = 'http://i.imgur.com/K7PSKI4.png'
     end
     if @user.save
       login(@user)

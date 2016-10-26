@@ -5,14 +5,7 @@ class CitiesController < ApplicationController
   end
 
   def show
-    if params[:id].to_i == 0
-      name = params[:id].gsub('-',' ').split.map(&:capitalize).join(' ')
-      @city = City.friendly.find_by({name: name})
-
-    else
-      @city = City.find(params[:id])
-      redirect_to city_path(@city)
-    end
+    @city = City.find(params[:id])
     @posts = @city.posts.order(created_at: :desc)
 
   end

@@ -23,32 +23,32 @@ user1 = User.create(name: 'user1',
                     email: 'user1@example.com',
                     password: 'password',
                     current_city: 1,
-                    profile_photo: '')
+                    profile_photo: 'http://i.imgur.com/K7PSKI4.png')
 user2 = User.create(name: 'user2',
                     email: 'user2@example.com',
                     password: 'password',
                     current_city: 1,
-                    profile_photo: '')
+                    profile_photo: 'http://i.imgur.com/K7PSKI4.png')
 user3 = User.create(name: 'user3',
                     email: 'user3@example.com',
                     password: 'password',
                     current_city: 2,
-                    profile_photo: '')
+                    profile_photo: 'http://i.imgur.com/K7PSKI4.png')
 user4 = User.create(name: 'user4',
                     email: 'user4@example.com',
                     password: 'password',
                     current_city: 2,
-                    profile_photo: '')
+                    profile_photo: 'http://i.imgur.com/K7PSKI4.png')
 user5 = User.create(name: 'user5',
                     email: 'user5@example.com',
                     password: 'password',
                     current_city: 3,
-                    profile_photo: '')
+                    profile_photo: 'http://i.imgur.com/K7PSKI4.png')
 user6 = User.create(name: 'user6',
                     email: 'user6@example.com',
                     password: 'password',
                     current_city: 3,
-                    profile_photo: '')
+                    profile_photo: 'http://i.imgur.com/K7PSKI4.png')
 posts = [
   { title: 'hipster habits',
     city_id: 1,
