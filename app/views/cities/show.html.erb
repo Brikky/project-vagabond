@@ -5,6 +5,6 @@
 <h4><%= post.title %></h4>
 Posted <%= (DateTime.now.to_date - post.created_at.to_date).to_i%> days ago
 <div> <%= post.text_body[0..1000] %></div>
-<%= link_to 'Read More', city_post_path(@city,post) %>
+<%= link_to 'Read More', post_path(post) %>
 
 <% end %>

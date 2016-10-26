@@ -6,30 +6,10 @@
 <%= link_to 'tell your own', login_path %>
 <% end %>
 
-
 <% @posts.each do |post| %>
 <div>
-  <% if params[:city_id] %>
-    <%=image_tag post.photo, height: '75'%> <h3><%= link_to post.title, request.env['PATH_INFO']+"/#{post.id}" %></h3><br>
-  <% elsif current_user %>
-    <%=image_tag post.photo, height: '75'%> <h3><%= link_to post.title, user_post_path(current_user,post) %></h3><br>
-  <% else %>
-    <%=image_tag post.photo, height: '75'%> <h3><%= link_to post.title, login_path %></h3><br>
-  <% end %>
-  <%= post.text_body %>
+    <%=image_tag post.photo, height: '75'%> <h3><%= link_to post.title, post_path(post) %></h3><br>
+  <div> <%= post.text_body[0..1000] %></div>
+  <%= link_to 'Read More', post_path(post) %>
 </div>
 <%end%>
-
-<% if Post.all.length > 10 %>
-<div>
- <%= will_paginate(@posts,:previous_label => "&laquo;", :next_label => "&raquo;",:class=>"small-font",:outer_window => 1,:inner_window => 0) %>
-</div>
-
-<div>
-  <%= page_entries_info(@posts) %>
-</div>
-</div>
-
-<% will_paginate @posts %>
-
-<% end %>

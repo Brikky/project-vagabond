@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
 
   resources :users do
-    resources :posts
+    resources :posts, only: [:new, :update, :index]
   end
   resources :cities do
-    resources :posts
+    resources :posts, only: [:new, :index]
   end
+
+  resources :posts
 
   get 'sessions/new'
   get '/login', to: 'sessions#new', as: :login

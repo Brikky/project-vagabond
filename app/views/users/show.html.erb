@@ -13,8 +13,8 @@
 
 <div>
   <%= link_to 'Add Your Story', new_user_post_path(@user)%>
-  <% @posts.each do |post| %>
   <h3>Posts:</h3>
-  <%=link_to post.title, user_post_path(@user,post) %> <br>
+  <% @posts.each do |post| %>
+  <%=link_to post.title, post_path(post) %> <br>
   <%end%>
 </div>
