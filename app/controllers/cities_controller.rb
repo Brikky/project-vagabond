@@ -1,10 +1,11 @@
 class CitiesController < ApplicationController
+  
   def index
     @cities = City.all
   end
 
   def show
-    @city = City.find(params[:id])
+    @city = City.friendly.find(params[:id])
     @posts = @city.posts.order(created_at: :desc)
 
   end
@@ -12,7 +13,7 @@ class CitiesController < ApplicationController
   def new
     @city = City.new
   end
-  
+
   def create
     @city = City.new(city_params)
     if @city.save
