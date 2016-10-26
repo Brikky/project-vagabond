@@ -11,16 +11,17 @@ class PostsController < ApplicationController
     @user = User.find(@post.user_id)
   end
 
-  def index
-    @posts = if !params[:user_id].nil?
-               User.find_by(name: params[:user_id]).posts
-             else
-               Post.all
-             end
+  def user_index
+  end
 
-    # if @posts.length > 10
-    #   @posts = Post.paginate(page: params[:page], per_page: 10)
-    # end
+  def city_index
+  end
+
+  def index
+    @posts = Post.all
+    if @posts.length > 10
+      @posts = Post.paginate(page: params[:page], per_page: 10)
+    end
   end
 
   def create

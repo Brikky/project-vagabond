@@ -15,10 +15,20 @@
     </div>
 </div>
 <div>
-
+  <h3><%= @user.name %>'s Active Cities</h3>
+    <% @city_with_post_count.each do |city, value| %>
+    <div>
+        <strong><%=city%>:
+        </strong><%= value %>
+    </div>
+    <% end %>
+</div>
+<div>
+    <% if @posts.length > 0%>
     <h3>Posts:</h3>
     <% @posts.each do |post| %>
     <%=link_to post.title, post_path(post) %>
     <br>
+    <%end%>
     <%end%>
 </div>
