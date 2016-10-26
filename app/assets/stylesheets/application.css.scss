@@ -1,0 +1,188 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+ *= require font-awesome
+
+ */
+ /* HSL */
+ $color1: hsla(229%, 19%, 22%, 1);
+ $color2: hsla(180%, 1%, 75%, 1);
+ $color3: hsla(0%, 0%, 100%, 1);
+ $color4: hsla(218%, 19%, 38%, 1);
+ $color5: hsla(29%, 89%, 58%, 1);
+
+ /* RGB */
+ $color1: rgba(45, 49, 66, 1);
+ $color2: rgba(191, 192, 192, 1);
+ $color3: rgba(255, 255, 255, 1);
+ $color4: rgba(79, 93, 117, 1);
+ $color5: rgba(221, 107, 1, 1);
+body{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+header{
+  padding: .25em;
+  position: fixed;
+  width: 100%;
+  background-color: $color4;
+  height: 2em;
+  display: flex;
+  align-content: center;
+  font-size: 2em;
+  display: flex;
+  clear: both;
+}
+h2{
+  font-family: 'Rock Salt';
+}
+h1, h2, h3, h4{
+  margin: 0;
+}
+
+
+.header{
+  width: 100%
+}
+.header-block{
+  height: 3.5em;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.button-container{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.header-link{
+
+}
+.profile-top{
+  background-color: $color5;
+  border-radius: 1em;
+  text-align: center;
+}
+.profile-bottom{
+  background-color: $color2;
+  border-radius: 0 0 1em 1em;
+  padding: 75px 10px 10px 10px;
+  margin-top: -75px;
+}
+
+.profile-photo{
+height: 10em;
+border-radius: 50%;
+background-color: $color3;
+border: 3px solid $color2;
+}
+
+.thumbnail{
+  width: 8em;
+}
+
+.inline{
+  display: inline;
+}
+.center{
+  text-align: center;
+  margin: 0 auto;
+}
+
+.text-summary{
+  margin-bottom: 1em;
+}
+
+.posts-container, .personal-info{
+  margin: 2em 0;
+}
+.right{
+  position: relative;
+  float: right;
+}
+.container{
+  text-align: center;
+}
+.main-image{
+  height: 50vmin;
+  margin: 1em 0;
+  border-radius: 10px;
+
+
+}
+
+.rock-salt{
+  font-family: 'Rock Salt' !important;
+}
+
+.bigger{
+  font-size: 150%;
+}
+.little-bigger{
+  font-size: 125%;
+}
+.up{
+  margin-top: -15px;
+}
+.medium-image{
+  height: 25em;
+}
+
+.post{
+  margin: 0 auto;
+  margin-bottom: 5em;
+  width: 85%;
+
+}
+.post p {
+  text-align: justify;
+    letter-spacing: -.51px;
+}
+
+em {
+  font-style: normal !important;
+}
+
+.pages a, em{
+  margin: 1.25em;
+}
+
+.fa{
+  margin: 0 .75em;
+}
+
+.form-container{
+  width: 50%;
+}
+
+.narrower{
+  width: 80%;
+}
+
+.no-padding{
+  padding: 0;
+}
+.vertical-center{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.button{
+  border-radius: 5px;
+}
+.paragraphs{
+  text-align: left;
+  width: 80%;
+  margin: 0 auto;
+}

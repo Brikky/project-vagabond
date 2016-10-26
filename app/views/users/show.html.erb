@@ -1,34 +1,44 @@
-<h1>Welcome to Vagabond Tales,
+<% if @user == current_user %>
+<h1 class = 'center'>Welcome to Vagabond Tales,
     <%= @user.name %>
 </h1>
-<div class="personal-info">
-    <%= image_tag @user.profile_photo, height: '100' %>
-    <h3>Current City:</h3><%= link_to @city.name, city_path(@city) %>
-    <h3>Name:</h3><%= @user.name %>
-    <h3>email:</h3><%= @user.email %>
-    <h3>member since:</h3><%= @user.created_at.to_date %>
-    <% if @user == current_user %>
-    <div class='button-container'>
-        <%= link_to 'Edit Profile', edit_user_path(@user) %>
-        <%= link_to 'Add Your Story', new_user_post_path(@user)%>
+<% end %>
+<div class="personal-info large-4 columns">
+<div class="profile-top">
+    <h2><%= @user.name %></h2>
+    <%= image_tag @user.profile_photo, class: 'profile-photo' %>
+    </div>
+    <div class="profile-bottom">
+    <h4>Joined: <%= @user.created_at.to_date %></h4>
+    <h4>Current City: <%= link_to @city.name, city_path(@city) %></h4>
+    <div>
+        <% if @posts.length > 0%>
+        <h4>Gone Exploring In</h4>
+        <% @city_with_post_count.each do |city, value| %>
+        <div>
+            <strong><%= city %>:
+            </strong><%= value %> posts
+        </div>
+        <% end %>
         <% end %>
     </div>
-</div>
-<div>
-  <h3><%= @user.name %>'s Active Cities</h3>
-    <% @city_with_post_count.each do |city, value| %>
-    <div>
-        <strong><%= city %>:
-        </strong><%= value %>
+    <% if @user == current_user %>
+    <div class='button-container'>
+        <%= link_to 'Edit Profile', edit_user_path(@user), class: 'button center'%>
+        <% end %>
+        </div>
     </div>
-    <% end %>
 </div>
-<div>
-    <% if @posts.length > 0%>
-    <h3>Posts:</h3>
-    <% @posts.each do |post| %>
-    <%=link_to post.title, post_path(post) %>
+
+<div class = 'large-8 columns posts-container'
+    <% if @posts.length > 0 %>
     <br>
+    <% @posts.each do |post| %>
+    <%= image_tag post.photo, class: 'thumbnail' %>
+    <h4 class = 'inline'><%=link_to post.title, post_path(post) %></h4>
+    <br>
+    <div class = 'text-summary'> <%= post.text_body[0..300] %></div>
+    <hr>
     <%end%>
     <%end%>
 </div>

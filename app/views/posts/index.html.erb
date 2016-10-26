@@ -1,21 +1,23 @@
 <h1>Welcome to the Campfire</h1>
-<h3>Share some stories</h3>
+<h3 class = 'up'>read some stories</h3>
 <% if current_user %>
-<%= link_to 'tell your own', new_user_post_path(current_user) %>
+<%= link_to 'or tell your own', new_user_post_path(current_user), class: 'rock-salt bigger' %>
 <% else %>
-<%= link_to 'tell your own', login_path %>
+<%= link_to 'tell your own', login_path, class: 'rock-salt bigger' %>
 <% end %>
-
+<br>
+<br>
 <% @posts.each do |post| %>
-<div>
-    <%=image_tag post.photo, height: '75'%> <h3><%= link_to post.title, post_path(post) %></h3><br>
-  <div> <%= post.text_body[0..1000] %></div>
-  <%= link_to 'Read More', post_path(post) %>
+<div class = 'post'>
+    <%=image_tag post.photo, class: 'medium-image'%> <h3><%= link_to post.title, post_path(post) %></h3><br>
+  <div><p> <%= post.text_body[0..1000] %></p></div>
+  <%= link_to 'Read More', post_path(post), class: 'little-bigger' %>
+  <hr>
 </div>
 <%end%>
 
 <% if Post.all.length > 10 %>
-<div>
+<div class = "bigger pages">
  <%= will_paginate(@posts,:previous_label => "&laquo;", :next_label => "&raquo;",:class=>"small-font",:outer_window => 1,:inner_window => 0) %>
 </div>
 

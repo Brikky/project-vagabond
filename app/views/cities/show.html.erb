@@ -1,10 +1,22 @@
-<h1><%= @city.name %>, <%= @city.state %></h1>
-<%=image_tag @city.photo, height: "400"%></br>
-<%=link_to 'New Post! Hooray', new_city_post_path(@city), method: :get, class:'button'%>
+<h1><%= @city.name %>,
+    <%= @city.state %></h1>
+<%=image_tag @city.photo, class: 'main-image'%>
+</br>
+<%=link_to 'New Post', new_city_post_path(@city), method: :get, class:'button'%>
+<br>
 <% @posts.each do |post| %>
-<h4><%= post.title %></h4>
-Posted <%= (DateTime.now.to_date - post.created_at.to_date).to_i%> days ago
-<div> <%= post.text_body[0..1000] %></div>
-<%= link_to 'Read More', post_path(post) %>
+<%= image_tag post.photo, class: 'thumbnail' %>
+<h4 class='inline'><%=link_to post.title, post_path(post) %></h4>
+<div>
+Posted
+<%= (DateTime.now.to_date - post.created_at.to_date).to_i %>
+days ago
+</div>
+<br>
+<div class='text-summary post'>
+<p><%= post.text_body[0..1000] %></p>
+<%= link_to 'Read More', post_path(post)%>
+<hr>
+</div>
 
-<% end %>
+<%end%>
