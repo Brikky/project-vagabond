@@ -22,11 +22,11 @@ Heroku
 
 ## Planning
 ___
-[User Stories](#)
+[User Stories](https://github.com/Brikky/project-vagabond/blob/master/user-stories.md)
 
 [Trello](https://trello.com/b/LCe12qhv)
 
-[Wireframes](#)
+[Wireframes](https://github.com/Brikky/project-vagabond/blob/master/wireframes.png)
 
 ## Code Examples
 ___
