@@ -23,36 +23,36 @@ user1 = User.create(name: 'user1',
                     email: 'user1@example.com',
                     password: 'password',
                     current_city: 1,
-                    profile_photo: '')
+                    profile_photo: 'http://lorempixel.com/output/people-q-c-640-480-9.jpg')
 user2 = User.create(name: 'user2',
                     email: 'user2@example.com',
                     password: 'password',
                     current_city: 1,
-                    profile_photo: '')
+                    profile_photo: 'http://lorempixel.com/output/people-q-c-400-400-8.jpg')
 user3 = User.create(name: 'user3',
                     email: 'user3@example.com',
                     password: 'password',
                     current_city: 2,
-                    profile_photo: '')
+                    profile_photo: 'http://lorempixel.com/output/people-q-c-400-400-4.jpg')
 user4 = User.create(name: 'user4',
                     email: 'user4@example.com',
                     password: 'password',
                     current_city: 2,
-                    profile_photo: '')
+                    profile_photo: 'http://lorempixel.com/output/people-q-c-400-400-2.jpg')
 user5 = User.create(name: 'user5',
                     email: 'user5@example.com',
                     password: 'password',
                     current_city: 3,
-                    profile_photo: '')
+                    profile_photo: 'http://lorempixel.com/output/people-q-c-400-400-1.jpg')
 user6 = User.create(name: 'user6',
                     email: 'user6@example.com',
                     password: 'password',
                     current_city: 3,
-                    profile_photo: '')
+                    profile_photo: 'http://lorempixel.com/output/people-q-c-400-400-5.jpg')
 posts = [
   { title: 'hipster habits',
     city_id: 1,
-    photo: 'https://longawkwardpause.files.wordpress.com/2016/01/bye-bye-hipster.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Craft beer leggings waistcoat, irony air plant glossier
     vaporware shabby chic fingerstache forage chia lyft hoodie. Biodiesel
     distillery flexitarian mustache, freegan umami squid. Hell of gluten-free
@@ -66,7 +66,7 @@ posts = [
     truffaut." },
   { title: 'hipster habits',
     city_id: 1,
-    photo: 'https://longawkwardpause.files.wordpress.com/2016/01/bye-bye-hipster.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Craft beer leggings waistcoat, irony air plant glossier
     vaporware shabby chic fingerstache forage chia lyft hoodie. Biodiesel
     distillery flexitarian mustache, freegan umami squid. Hell of gluten-free
@@ -80,7 +80,7 @@ posts = [
     truffaut." },
   { title: 'hipster habits',
     city_id: 1,
-    photo: 'https://longawkwardpause.files.wordpress.com/2016/01/bye-bye-hipster.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Craft beer leggings waistcoat, irony air plant glossier
     vaporware shabby chic fingerstache forage chia lyft hoodie. Biodiesel
     distillery flexitarian mustache, freegan umami squid. Hell of gluten-free
@@ -94,7 +94,7 @@ posts = [
     truffaut." },
   { title: 'hipster habits',
     city_id: 1,
-    photo: 'https://longawkwardpause.files.wordpress.com/2016/01/bye-bye-hipster.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Craft beer leggings waistcoat, irony air plant glossier
     vaporware shabby chic fingerstache forage chia lyft hoodie. Biodiesel
     distillery flexitarian mustache, freegan umami squid. Hell of gluten-free
@@ -108,7 +108,7 @@ posts = [
     truffaut." },
   { title: 'hipster habits',
     city_id: 1,
-    photo: 'https://longawkwardpause.files.wordpress.com/2016/01/bye-bye-hipster.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Craft beer leggings waistcoat, irony air plant glossier
     vaporware shabby chic fingerstache forage chia lyft hoodie. Biodiesel
     distillery flexitarian mustache, freegan umami squid. Hell of gluten-free
@@ -122,7 +122,7 @@ posts = [
     truffaut." },
   { title: 'lorem ipsum dolor',
     city_id: 1,
-    photo: 'http://blog.dominictrumfio.com/wp-content/uploads/2015/08/Lorem-Ipsum-2.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
 do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
   minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -132,7 +132,7 @@ do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
   mollit anim id est laborum.' },
   { title: 'lorem ipsum dolor',
     city_id: 1,
-    photo: 'http://blog.dominictrumfio.com/wp-content/uploads/2015/08/Lorem-Ipsum-2.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
     do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -142,7 +142,7 @@ do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         deserunt mollit anim id est laborum.' },
   { title: 'lorem ipsum dolor',
     city_id: 1,
-    photo: 'http://blog.dominictrumfio.com/wp-content/uploads/2015/08/Lorem-Ipsum-2.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
      do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -152,7 +152,7 @@ do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         culpa qui officia deserunt mollit anim id est laborum.' },
   { title: 'lorem ipsum dolor',
     city_id: 1,
-    photo: 'http://blog.dominictrumfio.com/wp-content/uploads/2015/08/Lorem-Ipsum-2.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
      do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -162,7 +162,7 @@ do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         culpa qui officia deserunt mollit anim id est laborum.' },
   { title: 'lorem ipsum dolor',
     city_id: 1,
-    photo: 'http://blog.dominictrumfio.com/wp-content/uploads/2015/08/Lorem-Ipsum-2.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
      do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -172,7 +172,7 @@ do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         culpa qui officia deserunt mollit anim id est laborum.' },
   { title: 'Boat of Blackbeard',
     city_id: 2,
-    photo: 'http://roundtherocktx.com/wp-content/uploads/2015/06/pirate.png',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Salmagundi splice the main brace ahoy come about Yellow Jack.
 Black jack yo-ho-ho carouser cable rigging. Gally swing the lead gaff
 measured fer yer chains grog blossom. To go on account draught six
@@ -185,7 +185,7 @@ Topgallant flogging dance the hempen jig marooned list. Pressgang
 starboard Letter of Marque hardtack chase. " },
   { title: 'Boat of Blackbeard',
     city_id: 2,
-    photo: 'http://roundtherocktx.com/wp-content/uploads/2015/06/pirate.png',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Salmagundi splice the main brace ahoy come about Yellow Jack.
     Black jack yo-ho-ho carouser cable rigging. Gally swing the lead gaff
     measured fer yer chains grog blossom. To go on account draught six
@@ -198,7 +198,7 @@ starboard Letter of Marque hardtack chase. " },
     starboard Letter of Marque hardtack chase. " },
   { title: 'Boat of Blackbeard',
     city_id: 2,
-    photo: 'http://roundtherocktx.com/wp-content/uploads/2015/06/pirate.png',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Salmagundi splice the main brace ahoy come about Yellow Jack.
     Black jack yo-ho-ho carouser cable rigging. Gally swing the lead gaff
     measured fer yer chains grog blossom. To go on account draught six
@@ -211,7 +211,7 @@ starboard Letter of Marque hardtack chase. " },
     starboard Letter of Marque hardtack chase. " },
   { title: 'Boat of Blackbeard',
     city_id: 2,
-    photo: 'http://roundtherocktx.com/wp-content/uploads/2015/06/pirate.png',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Salmagundi splice the main brace ahoy come about Yellow Jack.
     Black jack yo-ho-ho carouser cable rigging. Gally swing the lead gaff
     measured fer yer chains grog blossom. To go on account draught six
@@ -224,7 +224,7 @@ starboard Letter of Marque hardtack chase. " },
     starboard Letter of Marque hardtack chase. " },
   { title: 'Boat of Blackbeard',
     city_id: 2,
-    photo: 'http://roundtherocktx.com/wp-content/uploads/2015/06/pirate.png',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Salmagundi splice the main brace ahoy come about Yellow Jack.
     Black jack yo-ho-ho carouser cable rigging. Gally swing the lead gaff
     measured fer yer chains grog blossom. To go on account draught six
@@ -237,7 +237,7 @@ starboard Letter of Marque hardtack chase. " },
     starboard Letter of Marque hardtack chase. " },
   { title: 'Soft Kitty',
     city_id: 2,
-    photo: 'http://all-that-is-interesting.com/wordpress/wp-content/uploads/2012/08/ugly-cat-minskin-3.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Bleghbleghvomit my furball really tie the room together knock
   dish off table head butt cant eat out of my own dish leave hair
   everywhere. Stares at human while pushing stuff off a table. Purr sit in
@@ -255,7 +255,7 @@ starboard Letter of Marque hardtack chase. " },
   just to be annoying, kick up litter." },
   { title: 'Soft Kitty',
     city_id: 2,
-    photo: 'http://all-that-is-interesting.com/wordpress/wp-content/uploads/2012/08/ugly-cat-minskin-3.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Bleghbleghvomit my furball really tie the room together knock
     dish off table head butt cant eat out of my own dish leave hair
     everywhere. Stares at human while pushing stuff off a table. Purr sit in
@@ -273,7 +273,7 @@ starboard Letter of Marque hardtack chase. " },
     just to be annoying, kick up litter." },
   { title: 'Soft Kitty',
     city_id: 2,
-    photo: 'http://all-that-is-interesting.com/wordpress/wp-content/uploads/2012/08/ugly-cat-minskin-3.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Bleghbleghvomit my furball really tie the room together knock
     dish off table head butt cant eat out of my own dish leave hair
     everywhere. Stares at human while pushing stuff off a table. Purr sit in
@@ -291,7 +291,7 @@ starboard Letter of Marque hardtack chase. " },
     just to be annoying, kick up litter." },
   { title: 'Soft Kitty',
     city_id: 2,
-    photo: 'http://all-that-is-interesting.com/wordpress/wp-content/uploads/2012/08/ugly-cat-minskin-3.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Bleghbleghvomit my furball really tie the room together knock
     dish off table head butt cant eat out of my own dish leave hair
     everywhere. Stares at human while pushing stuff off a table. Purr sit in
@@ -309,7 +309,7 @@ starboard Letter of Marque hardtack chase. " },
     just to be annoying, kick up litter." },
   { title: 'Soft Kitty',
     city_id: 2,
-    photo: 'http://all-that-is-interesting.com/wordpress/wp-content/uploads/2012/08/ugly-cat-minskin-3.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Bleghbleghvomit my furball really tie the room together knock
     dish off table head butt cant eat out of my own dish leave hair
     everywhere. Stares at human while pushing stuff off a table. Purr sit in
@@ -327,7 +327,7 @@ starboard Letter of Marque hardtack chase. " },
     just to be annoying, kick up litter." },
   { title: 'Roar Roar Me a Dinosaur',
     city_id: 3,
-    photo: 'http://www.factslides.com/imgs/Chicken-TRex.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Ornithopsis Supersaurus Parasaurolophus Libycosaurus
 Loricosaurus Tatisaurus Pekinosaurus Therosaurus Philovenator Brohisaurus
 Dinheirosaurus Hylosaurus Gryposaurus Rocasaurus Xiaotingia Coelophysis
@@ -341,7 +341,7 @@ Zhuchengtyrannus Tanystropheus.
 " },
   { title: 'Roar Roar Me a Dinosaur',
     city_id: 3,
-    photo: 'http://www.factslides.com/imgs/Chicken-TRex.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Ornithopsis Supersaurus Parasaurolophus Libycosaurus
     Loricosaurus Tatisaurus Pekinosaurus Therosaurus Philovenator Brohisaurus
     Dinheirosaurus Hylosaurus Gryposaurus Rocasaurus Xiaotingia Coelophysis
@@ -354,7 +354,7 @@ Zhuchengtyrannus Tanystropheus.
     Zhuchengtyrannus Tanystropheus." },
   { title: 'Roar Roar Me a Dinosaur',
     city_id: 3,
-    photo: 'http://www.factslides.com/imgs/Chicken-TRex.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Ornithopsis Supersaurus Parasaurolophus Libycosaurus
     Loricosaurus Tatisaurus Pekinosaurus Therosaurus Philovenator Brohisaurus
     Dinheirosaurus Hylosaurus Gryposaurus Rocasaurus Xiaotingia Coelophysis
@@ -367,7 +367,7 @@ Zhuchengtyrannus Tanystropheus.
     Zhuchengtyrannus Tanystropheus." },
   { title: 'Roar Roar Me a Dinosaur',
     city_id: 3,
-    photo: 'http://www.factslides.com/imgs/Chicken-TRex.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Ornithopsis Supersaurus Parasaurolophus Libycosaurus
     Loricosaurus Tatisaurus Pekinosaurus Therosaurus Philovenator Brohisaurus
     Dinheirosaurus Hylosaurus Gryposaurus Rocasaurus Xiaotingia Coelophysis
@@ -380,7 +380,7 @@ Zhuchengtyrannus Tanystropheus.
     Zhuchengtyrannus Tanystropheus." },
   { title: 'Roar Roar Me a Dinosaur',
     city_id: 3,
-    photo: 'http://www.factslides.com/imgs/Chicken-TRex.jpg',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "Ornithopsis Supersaurus Parasaurolophus Libycosaurus
     Loricosaurus Tatisaurus Pekinosaurus Therosaurus Philovenator Brohisaurus
     Dinheirosaurus Hylosaurus Gryposaurus Rocasaurus Xiaotingia Coelophysis
@@ -393,7 +393,7 @@ Zhuchengtyrannus Tanystropheus.
     Zhuchengtyrannus Tanystropheus." },
   { title: 'Space Ships in the Sky',
     city_id: 3,
-    photo: 'http://1.images.comedycentral.com/images/shows/Futurama/Videos/season_1/futurama_01_0102_zoidberg_physical_640x360.jpg?quality=0.85&width=295&height=165&crop=true',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "OK, if everyone's finished being stupid. Belligerent and
   numerous. That's a popular name today. Little 'e', big 'B'? Say it in
   Russian! Bender! Ship! Stop bickering or I'm going to come back there and
@@ -404,7 +404,7 @@ Zhuchengtyrannus Tanystropheus.
   'destroy' you!" },
   { title: 'Space Ships in the Sky',
     city_id: 3,
-    photo: 'http://1.images.comedycentral.com/images/shows/Futurama/Videos/season_1/futurama_01_0102_zoidberg_physical_640x360.jpg?quality=0.85&width=295&height=165&crop=true',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "OK, if everyone's finished being stupid. Belligerent and
     numerous. That's a popular name today. Little 'e', big 'B'? Say it in
     Russian! Bender! Ship! Stop bickering or I'm going to come back there and
@@ -415,7 +415,7 @@ Zhuchengtyrannus Tanystropheus.
     'destroy' you!" },
   { title: 'Space Ships in the Sky',
     city_id: 3,
-    photo: 'http://1.images.comedycentral.com/images/shows/Futurama/Videos/season_1/futurama_01_0102_zoidberg_physical_640x360.jpg?quality=0.85&width=295&height=165&crop=true',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "OK, if everyone's finished being stupid. Belligerent and
     numerous. That's a popular name today. Little 'e', big 'B'? Say it in
     Russian! Bender! Ship! Stop bickering or I'm going to come back there and
@@ -426,7 +426,7 @@ Zhuchengtyrannus Tanystropheus.
     'destroy' you!" },
   { title: 'Space Ships in the Sky',
     city_id: 3,
-    photo: 'http://1.images.comedycentral.com/images/shows/Futurama/Videos/season_1/futurama_01_0102_zoidberg_physical_640x360.jpg?quality=0.85&width=295&height=165&crop=true',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "OK, if everyone's finished being stupid. Belligerent and
     numerous. That's a popular name today. Little 'e', big 'B'? Say it in
     Russian! Bender! Ship! Stop bickering or I'm going to come back there and
@@ -437,7 +437,7 @@ Zhuchengtyrannus Tanystropheus.
     'destroy' you!" },
   { title: 'Space Ships in the Sky',
     city_id: 3,
-    photo: 'http://1.images.comedycentral.com/images/shows/Futurama/Videos/season_1/futurama_01_0102_zoidberg_physical_640x360.jpg?quality=0.85&width=295&height=165&crop=true',
+    photo: 'http://pipsum.com/435x310.jpg',
     text_body: "OK, if everyone's finished being stupid. Belligerent and
     numerous. That's a popular name today. Little 'e', big 'B'? Say it in
     Russian! Bender! Ship! Stop bickering or I'm going to come back there and
