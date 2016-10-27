@@ -30,7 +30,14 @@
     </div>
 </div>
 
-<div class = 'large-8 columns posts-container'
+<div class = 'large-8 columns posts-container'>
+
+<% if @user == current_user %>
+<div class='button-container'>
+    <%= link_to 'New Post', new_post_path(@user), class: 'button center'%>
+    <% end %>
+</div>
+
     <% if @posts.length > 0 %>
     <br>
     <% @posts.each do |post| %>

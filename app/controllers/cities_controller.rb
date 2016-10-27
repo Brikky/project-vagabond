@@ -1,19 +1,11 @@
 class CitiesController < ApplicationController
-
   def index
     @cities = City.all
   end
 
   def show
-    if params[:id].to_i == 0
-      name = params[:id].gsub('-',' ').split.map(&:capitalize).join(' ')
-      @city = City.find_by({name: name})
-    else
-      @city = City.find(params[:id])
-      redirect_to city_path(@city)
-    end
+    @city = City.find(params[:id])
     @posts = @city.posts.order(created_at: :desc)
-
   end
 
   def new
@@ -22,7 +14,6 @@ class CitiesController < ApplicationController
 
   def create
     @city = City.new(city_params)
-    @city.name = @city.name.downcase.split.map(&:capitalize).join(' ')
     if @city.save
       flash[:success] = 'Thanks for exploring this City!'
       redirect_to city_path(@city)
@@ -33,6 +24,7 @@ class CitiesController < ApplicationController
   end
 
   private
+
   def city_params
     params.require(:city).permit(:name, :state, :country, :photo)
   end
