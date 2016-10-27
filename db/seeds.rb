@@ -447,6 +447,11 @@ Zhuchengtyrannus Tanystropheus.
     liked cooking. That's so cute. Stop it, stop it. It's fine. I will
     'destroy' you!" }
 ]
+comment = {
+    user_id: 1,
+    post_id: 1,
+    text_body: 't.belongs_to :user, foreign_key: truet.belongs_to :user, foreign_key: truet.belongs_to :user, foreign_key: truet.belongs_to :user, foreign_key: truet.belongs_to :user, foreign_key: true'
+}
 posts.shuffle!
 user1.posts.create(posts[0...5])
 user2.posts.create(posts[5...10])
@@ -454,3 +459,4 @@ user3.posts.create(posts[10...15])
 user4.posts.create(posts[15...20])
 user5.posts.create(posts[20...25])
 user6.posts.create(posts[25...29])
+user1.posts.first.comments.create(comment).save

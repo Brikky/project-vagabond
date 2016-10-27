@@ -31,21 +31,21 @@
 </div>
 
 <div class = 'large-8 columns posts-container'>
-
-<% if @user == current_user %>
-<div class='button-container'>
-    <%= link_to 'New Post', new_post_path(@user), class: 'button center'%>
+    <% if @user == current_user %>
+        <div class='button-container'>
+            <%= link_to 'New Post', new_post_path(@user), class: 'button center'%>
+        </div>
     <% end %>
-</div>
-<div class='post'>
-    <% if @posts.length > 0 %>
-    <br>
-    <% @posts.each do |post| %>
-    <%= image_tag post.photo, class: 'thumbnail' %> 
-    <h4 class = 'inline'><%=link_to post.title, post_path(post) %></h4>
-    <br>
-    <div class = 'text-summary'> <%= post.text_body[0..300] %></div>
-    <hr>
-    <%end%>
-    <%end%>
+    <div class='post'>
+        <% if @posts.length > 0 %>
+        <br>
+        <% @posts.each do |post| %>
+        <%= image_tag post.photo, class: 'thumbnail' %> 
+        <h4 class = 'inline'><%=link_to post.title, post_path(post) %></h4>
+        <br>
+        <div class = 'text-summary'> <%= post.text_body[0..300] %></div>
+        <hr>
+        <%end%>
+        <%end%>
+    </div>
 </div>

@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   end
 
   resources :posts
+  resources :comments, only: [:new, :destroy]
+
+  post '/comments/', to: 'comments#create'
 
   get 'sessions/new'
   get '/login', to: 'sessions#new', as: :login
