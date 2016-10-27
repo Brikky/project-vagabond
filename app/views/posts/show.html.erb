@@ -8,36 +8,27 @@
   <div class = 'paragraphs'>
     <p><%= @post.text_body %></p>
   </div>
-
-  <div>
-    <% if @comments %>
-      <h3>Comments:</h3>
-      <% @comments.each do |comment| %>
-        <div class = 'paragraphs'>
-          <p><strong>User: </strong><%= comment.user.name %></p>
-          <p><%= comment.text_body%></p>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
   
   <div>
-    <%#= link_to 'Add Comment', '#', data: {:'reveal-id' => 'signupModal',} %>
-    <p><a data-open='myModal'>Add Comment</a></p>
     <% if @user.id == current_user.id %>
     <%= link_to 'Revise', edit_post_path(@post), class: 'button'%>
     <%= button_to 'Delete', post_path(@post), class: 'button alert', method: :delete, data: {confirm: 'Are you sure you want to delete #{@post.title}'}%>
     <% end %>
   </div>
 
-  <div id='myModal' class='reveal' data-reveal aria-labelledby='modalTitle' aria-hidden='true' role='dialog'>
-    </br>
+  <div>
+    <h3>Comments:</h3>
     <%= form_for @comment, :url => comments_path(@comment) do |f| %>
-      <%= f.text_area :text_body, placeholder: 'What do you think?...' %>
-      <%= f.hidden_field :post_id, :value => @post.id%>
-      <%= f.submit 'Add Comment'%>
+      <p><%= f.text_area :text_body, placeholder: 'What do you think?...', class: 'form-container center' %></p>
+      <p><%= f.hidden_field :post_id, :value => @post.id%></p>
+      <p><%= f.submit 'Add Comment', class: 'button secondary' %></p>
     <% end %>
-    <a class="close-button" data-close aria-label="Close modal">&#215;</a>
+    <% @comments.each do |comment| %>
+      <div class = 'paragraphs'>
+        <p><strong><%= comment.user.name.capitalize %> Says:</strong></p>
+        <p><%= comment.text_body%></p>
+      </div>
+    <% end %>
   </div>
 
 </div>

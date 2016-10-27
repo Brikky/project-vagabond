@@ -10,7 +10,9 @@ class CommentsController < ApplicationController
     @post = Post.find(post_id)
     @comment = @post.comments.create(comment_params)
     @comment.user_id = @user.id
-    @comment.save
+    unless @comment.save
+      flash[:error] = 'Must include text!'
+    end
     redirect_to post_path(@post)
   end
 
