@@ -12,13 +12,13 @@ A social website for those stricken with wanderlust. Share your stories, read ot
 
 ### Technologies Used
 ___
-HTML
-CSS
-SASS
-Foundation
-Ruby
-Rails
-Heroku
+* HTML
+* CSS
+* SASS
+* Foundation
+* Ruby
+* Rails
+* Heroku
 
 ## Planning
 ___
