@@ -2,7 +2,7 @@
 ___
 A social website for those stricken with wanderlust. Share your stories, read others' to find inspiration for your next trip.
 
-### URL: [vagabond-tales.herokuapp.com](https://join-in-app.herokuapp.com/)
+### URL: [vagabond-tales.herokuapp.com](https://vagabond-stories.herokuapp.com/)
 
 ### Features
 * Users accounts with auth and validation
