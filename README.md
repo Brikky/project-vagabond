@@ -1,6 +1,6 @@
 # Vagabond Tales
 ___
-A social website for those stricken with wanderlust. Share your stories, read others' to find inspiration for your next trip.
+A social website for those stricken with wanderlust. Share your stories, or read others' to find inspiration for your next trip.
 
 ### URL: [vagabond-tales.herokuapp.com](https://vagabond-stories.herokuapp.com/)
 
