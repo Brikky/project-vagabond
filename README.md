@@ -91,8 +91,16 @@ ___
 ___
 Main Page
 
-![Index](http://i.imgur.com/g24jFnJ.png)
+![Index](http://i.imgur.com/QPUkh9T.png)
 
 Post Show Page
 
-![Post Show](http://i.imgur.com/jde2DnI.png)
+![Post Show](http://i.imgur.com/ljobHJW.png)
+
+User Profile Page
+
+![User Show](http://i.imgur.com/Lm7MOSH.png)
+
+City Show Page
+
+![City Show](http://i.imgur.com/vz5uXj7.png)
