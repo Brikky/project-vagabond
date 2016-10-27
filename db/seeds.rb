@@ -80,7 +80,7 @@ posts = [
     truffaut." },
   { title: 'hipster habits',
     city_id: 1,
-    photo: 'https://pixabay.com/static/uploads/photo/2015/05/09/22/35/air-760325_960_720.jpg',
+    photo: 'http://i.imgur.com/o0OauLV.jpg',
     text_body: "Craft beer leggings waistcoat, irony air plant glossier
     vaporware shabby chic fingerstache forage chia lyft hoodie. Biodiesel
     distillery flexitarian mustache, freegan umami squid. Hell of gluten-free
@@ -142,7 +142,7 @@ do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         deserunt mollit anim id est laborum.' },
   { title: 'lorem ipsum dolor',
     city_id: 1,
-    photo: 'https://pixabay.com/static/uploads/photo/2015/03/11/07/58/travel-668305_960_720.jpg',
+    photo: 'http://i.imgur.com/D7o1VQn.jpg',
     text_body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
      do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -172,7 +172,7 @@ do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         culpa qui officia deserunt mollit anim id est laborum.' },
   { title: 'Boat of Blackbeard',
     city_id: 2,
-    photo: 'https://pixabay.com/static/uploads/photo/2015/09/26/03/09/san-diego-harbor-958584_960_720.jpg',
+    photo: 'http://i.imgur.com/Hc1sUL0.jpg',
     text_body: "Salmagundi splice the main brace ahoy come about Yellow Jack.
 Black jack yo-ho-ho carouser cable rigging. Gally swing the lead gaff
 measured fer yer chains grog blossom. To go on account draught six
