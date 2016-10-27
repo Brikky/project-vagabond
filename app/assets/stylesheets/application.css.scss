@@ -50,6 +50,13 @@ h2{
 h1, h2, h3, h4{
   margin: 0;
 }
+textarea{
+  height: 10em;
+}
+
+input, textarea, select{
+  border-radius: 10px !important;
+}
 
 
 .header{
@@ -82,18 +89,20 @@ h1, h2, h3, h4{
 }
 
 .profile-photo{
-height: 10em;
-border-radius: 50%;
-background-color: $color3;
-border: 3px solid $color2;
+  height: 10em;
+  border-radius: 50%;
+  background-color: $color3;
+  border: 3px solid $color2;
 }
 
 .thumbnail{
-  width: 8em;
+  max-width: 15vmax;
+  border-radius: 1em;
 }
 
 .inline{
   display: inline;
+  padding-left: 1em;
 }
 .center{
   text-align: center;
@@ -114,12 +123,18 @@ border: 3px solid $color2;
 .container{
   text-align: center;
 }
-.main-image{
-  height: 50vmin;
-  margin: 1em 0;
-  border-radius: 10px;
 
+.main-photo img {
+  margin: 0 auto;
+  margin-bottom: 1em;
+  border-radius: 1em;
+  max-height: 50vmin;
+  max-width: 100vmax;
+}
 
+.medium-photo{
+  border-radius: 1em;
+  max-height: 35vmin;
 }
 
 .rock-salt{
@@ -134,9 +149,6 @@ border: 3px solid $color2;
 }
 .up{
   margin-top: -15px;
-}
-.medium-image{
-  height: 25em;
 }
 
 .post{
@@ -185,4 +197,9 @@ em {
   text-align: left;
   width: 80%;
   margin: 0 auto;
+}
+
+.post-header{
+  text-align: left;
+  margin-left: 5em;
 }

@@ -1,5 +1,4 @@
 class CitiesController < ApplicationController
-
   def index
     @cities = City.all
   end
@@ -7,7 +6,6 @@ class CitiesController < ApplicationController
   def show
     @city = City.find(params[:id])
     @posts = @city.posts.order(created_at: :desc)
-
   end
 
   def new
@@ -16,7 +14,6 @@ class CitiesController < ApplicationController
 
   def create
     @city = City.new(city_params)
-    @city.name = @city.name.downcase.split.map(&:capitalize).join(' ')
     if @city.save
       flash[:success] = 'Thanks for exploring this City!'
       redirect_to city_path(@city)
@@ -27,6 +24,7 @@ class CitiesController < ApplicationController
   end
 
   private
+
   def city_params
     params.require(:city).permit(:name, :state, :country, :photo)
   end

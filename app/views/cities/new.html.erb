@@ -1,3 +1,4 @@
+<div class="form-container center">
 <h1>Explore a New City</h1>
 <%= form_for @city, url: '/cities' do |f|%>
 <div>
@@ -13,5 +14,6 @@
     <%= f.text_field :photo, placeholder: 'city photo url' %>
 </div>
 
-<%= f.submit 'Add'%>
+<%= f.submit 'Add', class: 'button'%>
 <% end %>
+</div>

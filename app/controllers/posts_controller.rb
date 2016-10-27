@@ -9,6 +9,8 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @user = User.find(@post.user_id)
+    @comment = Comment.new
+    @comments = @post.comments
   end
 
   def user_index
@@ -18,9 +20,9 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
     if @posts.length > 10
-      @posts = Post.paginate(page: params[:page], per_page: 10)
+      @posts = Post.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
     end
   end
 

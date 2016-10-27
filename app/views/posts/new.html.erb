@@ -1,10 +1,19 @@
+<div class="form-container center">
 <h1>Tell Your Story</h1>
 <%= form_for @post do |f| %>
 <%= f.text_field :title, placeholder: 'title' %>
 <br>
+
 <% unless params[:city_id] %>
-<%= f.collection_select :city_id, City.all, :id, :name_state%>
-<%= link_to 'Add New City', new_city_path %>
+<div class = 'vertical-center'>
+    <div class = "columns small-9 no-padding">
+        <%= f.collection_select :city_id, City.all, :id, :name_state%>
+    </div>
+    <div class = "columns small-3">
+        <%= link_to 'Or Add New', new_city_path, class: 'button secondary'%>
+    </div>
+</div>
+
 <br>
 <% else %>
 <%= f.hidden_field :city_id, :value => params[:city_id]%>
@@ -14,5 +23,6 @@
 <br>
 <%= f.text_area :text_body, placeholder: 'this one time, in band camp...' %>
 <br>
-<%= f.submit %>
+<%= f.submit 'Share', class: 'button'%>
 <% end %>
+</div>

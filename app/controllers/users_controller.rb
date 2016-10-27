@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts
+    @posts = @user.posts.order(created_at: :desc)
     @city = City.find_by_id(@user.current_city)
 
     @user_cities = @posts.pluck(:city_id)
