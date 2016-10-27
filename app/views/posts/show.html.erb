@@ -1,14 +1,16 @@
 <div class="personal-info">
-  <%= image_tag @post.photo, height: '100' %>
+  <div class ="main-photo">
+    <%= image_tag @post.photo %>
+  </div>
   <h3><%= @post.title %></h3>
   <h5>Written From: <%= link_to @post.city.name, city_path(@post.city) %></h5>
   <h5>Author: <%= link_to @user.name, user_path(@user)%></h5>
   <div class = "paragraphs">
-    <%= @post.text_body %>
+    <p><%= @post.text_body %></p>
   </div>
   <div>
     <% if @user.id == current_user.id %>
-    <%= link_to 'Revise', edit_post_path(@post)%>
+    <%= link_to 'Revise', edit_post_path(@post), class: 'button'%>
     <%= button_to 'Delete', post_path(@post), class: 'button alert', method: :delete, data: {confirm: "Are you sure you want to delete #{@post.title}"}%>
     <% end %>
   </div>

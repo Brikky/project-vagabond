@@ -37,11 +37,11 @@
     <%= link_to 'New Post', new_post_path(@user), class: 'button center'%>
     <% end %>
 </div>
-
+<div class='post'>
     <% if @posts.length > 0 %>
     <br>
     <% @posts.each do |post| %>
-    <%= image_tag post.photo, class: 'thumbnail' %>
+    <%= image_tag post.photo, class: 'thumbnail' %> 
     <h4 class = 'inline'><%=link_to post.title, post_path(post) %></h4>
     <br>
     <div class = 'text-summary'> <%= post.text_body[0..300] %></div>

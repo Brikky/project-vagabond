@@ -1,5 +1,7 @@
 <% @cities.each do |city| %>
-<%=image_tag city.photo, class: 'main-image'%>
+<div class='main-photo'>
+  <%= image_tag city.photo %>
+</div>
 <h3><%= link_to city.name, city_path(city) %>, <%= city.state %></h3>
 
 <% end %>
