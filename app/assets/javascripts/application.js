@@ -12,8 +12,23 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
 //= require turbolinks
 //= require_tree .
+//= require foundation
+$(document).foundation();
 
-$(function(){ $(document).foundation(); });
+
+$(document).ready(function(){
+  $('.welcome').fadeOut(3000);
+
+
+
+
+
+
+
+
+
+
+
+});

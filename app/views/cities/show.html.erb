@@ -1,24 +1,27 @@
-<h1><%= @city.name %>,
-    <%= @city.state %></h1>
-<div class='main-photo'>
-  <%= image_tag @city.photo %>
+<h1><%= @city.name %></h1>
+<div class='stretch'>
+    <%= image_tag @city.photo %>
 </div>
 <div>
-<%=link_to 'New Post', new_city_post_path(@city), method: :get, class:'button'%>
+    <%=link_to 'New Post', new_city_post_path(@city), method: :get, class:'button'%>
 </div>
 <% @posts.each do |post| %>
-<div class = 'post'>
-    <%=image_tag post.photo, class: 'medium-photo'%> 
-    <h3><%= link_to post.title, post_path(post) %></h3><br>
-  <div>
-  <div>
-    Posted
-    <%= (DateTime.now.to_date - post.created_at.to_date).to_i %>
-    days ago
-  </div>  
-    <p> <%= post.text_body[0..1000] %></p>
-  </div>
-  <%= link_to 'Read More', post_path(post), class: 'little-bigger' %>
-  <hr>
+
+<%=image_tag post.photo, class: 'medium-photo'%>
+<h3><%= link_to post.title, post_path(post) %></h3><br>
+<div>
+    <div>
+        <h4 class='center'>
+          Posted <%= time_ago_in_words post.created_at %>
+            ago
+        </h4>
+    </div>
+    <div class='post'>
+        <p>
+            <%= post.text_body[0..1000] %>
+        </p>
+    </div>
+    <%= link_to 'Read More', post_path(post), class: 'little-bigger' %>
+    <hr>
 </div>
 <%end%>

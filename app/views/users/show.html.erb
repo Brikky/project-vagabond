@@ -1,5 +1,5 @@
 <% if @user == current_user %>
-<h1 class = 'center'>Welcome to Vagabond Tales,
+<h1 class = 'center welcome'>Welcome to Vagabond Tales,
     <%= @user.name %>
 </h1>
 <% end %>
@@ -30,11 +30,13 @@
     </div>
 </div>
 
-<div class = 'large-8 columns posts-container'>
-
+<div class = 'large-8 columns center'>
     <% if @user == current_user %>
-    <div class='button-container'>
-        <%= link_to 'New Post', new_post_path(@user), class: 'button center'%>
+    <div class="columns small-3 non-collapse"></div>
+    <div class='columns small-6 medium-6 center'>
+
+
+        <%= link_to 'New Post', new_post_path(@user), class: 'button center small-6 space'%>
     </div>
     <% end %>
     <div class='post'>
@@ -46,10 +48,12 @@
         <h4 class = 'inline'><%=link_to post.title, post_path(post) %></h4>
         </div>
         <br>
-        <div class = 'text-summary'> <%= post.text_body[0..300] %></div>
+        <div class = 'text-summary post'><p> <%= post.text_body[0..300] %></p>
+        </div>
+        <%= link_to 'Read More', post_path(post)%>
         <hr>
         <%end%>
         <%end%>
     </div>
-    
+
 </div>
