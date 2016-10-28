@@ -5,5 +5,9 @@ class Post < ApplicationRecord
   validates :title, presence: true, length: { in: 1..200 }
   validates :text_body, presence: true, length: { minimum: 140 }
 
+  alias_method :owner, :user
+  # def owner
+  #   user # self.user
+  # end
 
 end
