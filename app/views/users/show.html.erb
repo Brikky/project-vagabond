@@ -1,4 +1,4 @@
-<% if @user == current_user %>
+<% if @user.is?(current_user) %>
 <h1 class = 'center welcome'>Welcome to Vagabond Tales,
     <%= @user.name %>
 </h1>
@@ -22,7 +22,7 @@
         <% end %>
         <% end %>
     </div>
-    <% if @user == current_user %>
+    <% if @user.is?(current_user) %>
     <div class='button-container'>
         <%= link_to 'Edit Profile', edit_user_path(@user), class: 'button center'%>
         <% end %>
@@ -31,7 +31,7 @@
 </div>
 
 <div class = 'large-8 columns center'>
-    <% if @user == current_user %>
+    <% if @user.is?(current_user) %>
     <div class="columns small-3 non-collapse"></div>
     <div class='columns small-6 medium-6 center'>
 
