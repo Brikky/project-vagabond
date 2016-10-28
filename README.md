@@ -1,8 +1,8 @@
 # Vagabond Tales
 ___
-A social website for those stricken with wanderlust. Share your stories, read others' to find inspiration for your next trip.
+A social website for those stricken with wanderlust. Share your stories, or read others' to find inspiration for your next trip.
 
-### URL: [vagabond-tales.herokuapp.com](https://join-in-app.herokuapp.com/)
+### URL: [vagabond-tales.herokuapp.com](https://vagabond-stories.herokuapp.com/)
 
 ### Features
 * Users accounts with auth and validation
@@ -32,6 +32,7 @@ ___
 ___
 
 ```Ruby
+#lily
 def create
     @user = current_user
     @post = current_user.posts.create(post_params)
@@ -49,6 +50,7 @@ def create
 ```
 
 ```Ruby
+#brandon
 def show
     @user = User.find(params[:id])
     @posts = @user.posts.order(created_at: :desc)
@@ -72,6 +74,7 @@ def show
   end
 ```
 ```Ruby
+#toby
   def update
     #User attributes must be updated one by one in order to avoid triggering validations
     @user.update_attribute(:name, params[:user][:name])
