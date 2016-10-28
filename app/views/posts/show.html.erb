@@ -23,7 +23,7 @@
       <p><%= f.hidden_field :post_id, :value => @post.id%></p>
       <p><%= f.submit 'Add Comment', class: 'button secondary' %></p>
     <% end %>
-    <% @comments.each do |comment| %>
+    <% @post.comments.each do |comment| %>
       <div class = 'paragraphs'>
         <p><strong><%= comment.user.name.capitalize %> Says:</strong></p>
         <p><%= comment.text_body%></p>
