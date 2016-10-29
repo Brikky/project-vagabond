@@ -2,28 +2,15 @@ class PostsController < ApplicationController
   before_action :logged_in?, except: [:index]
   before_action :get_post, only: [:show, :edit, :update, :destroy]
 
-  def new
-    @post = Post.new
-    @user = current_user
-  end
-
-  def show
-    @user = User.find(@post.user_id)
-    @comment = Comment.new
-    @comments = @post.comments
-  end
-
   def user_index
   end
 
   def city_index
   end
 
-  def index
-    @posts = Post.all.order(created_at: :desc)
-    if @posts.length > 10
-      @posts = Post.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
-    end
+  def new
+    @post = Post.new
+    @user = current_user
   end
 
   def create
@@ -40,6 +27,18 @@ class PostsController < ApplicationController
     else
       flash[:error] = @post.errors.full_messages.to_sentence
       render :new
+    end
+  end
+
+  def show
+    @comment = Comment.new
+    @comments = @post.comments
+  end
+
+  def index
+    @posts = Post.all.order(created_at: :desc)
+    if @posts.length > 10
+      @posts = Post.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
     end
   end
 
