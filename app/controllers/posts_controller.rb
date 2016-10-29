@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :logged_in?, except: [:index]
+  before_action :get_post, only: [:show, :edit, :update, :destroy]
 
   def new
     @post = Post.new
@@ -7,7 +8,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @user = User.find(@post.user_id)
     @comment = Comment.new
     @comments = @post.comments
@@ -44,17 +44,14 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     @post.update(post_params)
     redirect_to post_path(@post)
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.comments.delete_all
     @post.delete
     redirect_to user_path(current_user)
@@ -64,5 +61,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :text_body, :photo)
+  end
+
+  def get_post
+    @post = Post.find(params[:id])
   end
 end
