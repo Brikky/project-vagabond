@@ -31,8 +31,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comment = Comment.new
-    @comments = @post.comments
+    @new_comment = Comment.new
   end
 
   def index
