@@ -9,7 +9,9 @@
 <br>
 <% @posts.each do |post| %>
 <div class = 'post'>
-    <%=image_tag post.photo, class: 'medium-photo'%> <h3><%= link_to post.title, post_path(post) %></h3><br>
+    <%=image_tag post.photo, class: 'medium-photo'%>
+    <h2 class = 'post-title'><%= link_to post.title, post_path(post) %></h2>
+    <br>
   <div><p> <%= post.text_body[0..1000] %></p></div>
   <%= link_to 'Read More', post_path(post), class: 'little-bigger' %>
   <hr>
