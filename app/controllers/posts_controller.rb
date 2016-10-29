@@ -1,17 +1,7 @@
 class PostsController < ApplicationController
   before_action :logged_in?, except: [:index]
-
-  def new
-    @post = Post.new
-    @user = current_user
-  end
-
-  def show
-    @post = Post.find(params[:id])
-    @user = User.find(@post.user_id)
-    @comment = Comment.new
-    @comments = @post.comments
-  end
+  before_action :get_post, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, only: [:edit, :update, :destroy]
 
   def user_index
   end
@@ -19,11 +9,9 @@ class PostsController < ApplicationController
   def city_index
   end
 
-  def index
-    @posts = Post.all.order(created_at: :desc)
-    if @posts.length > 10
-      @posts = Post.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
-    end
+  def new
+    @post = Post.new
+    @user = current_user
   end
 
   def create
@@ -43,18 +31,26 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @new_comment = Comment.new
+  end
+
+  def index
+    @posts = Post.all.order(created_at: :desc)
+    if @posts.length > 10
+      @posts = Post.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+    end
+  end
+
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     @post.update(post_params)
     redirect_to post_path(@post)
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.comments.delete_all
     @post.delete
     redirect_to user_path(current_user)
@@ -64,5 +60,13 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :text_body, :photo)
+  end
+
+  def get_post
+    @post = Post.find(params[:id])
+  end
+
+  def authorize 
+    redirect_to :back unless current_user == @post.user
   end
 end

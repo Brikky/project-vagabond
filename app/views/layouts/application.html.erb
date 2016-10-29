@@ -21,6 +21,7 @@
                 <span class="header-link show-for-small-only">
                     <%= link_to "<i class='fa fa-home' aria-hidden='true'></i>".html_safe, root_path %>
                 </span>
+
                 <% unless current_user %>
                 <span class="header-link">
                     <%= link_to 'Login', login_path %>
@@ -29,7 +30,9 @@
                     <%= link_to 'Sign Up', new_user_path %>
                 </span>
             <% else %>
-                <!--  -->
+                <span class="header-link">
+                  <%= link_to "<i class='fa fa-globe' aria-hidden='true'></i>".html_safe, cities_path %>
+                </span>
                 <span class="header-link">
                     <%= link_to "<i class='fa fa-user' aria-hidden='true'></i>".html_safe, user_path(current_user) %>
                 </span>
@@ -37,7 +40,7 @@
                     <%= link_to 'Log Out', logout_path %>
                 </span>
                 <% end %>
-            </div>
+            </div><!-- class = header -->
         </header>
 
         <div class='header-block'></div>

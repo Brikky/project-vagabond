@@ -1,6 +1,6 @@
 <div class="form-container center">
 <h1>Explore a New City</h1>
-<%= form_for @city, url: '/cities' do |f|%>
+<%= form_for City.new, url: '/cities' do |f|%>
 <div>
     <%= f.text_field :name, placeholder: 'name'%>
 </div>
