@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :logged_in?, except: [:index]
   before_action :get_post, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, only: [:edit, :update, :destroy]
 
   def user_index
   end
@@ -63,5 +64,9 @@ class PostsController < ApplicationController
 
   def get_post
     @post = Post.find(params[:id])
+  end
+
+  def authorize 
+    redirect_to :back unless current_user == @post.user
   end
 end

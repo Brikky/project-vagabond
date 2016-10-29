@@ -10,7 +10,7 @@
   </div>
 
   <div>
-    <% if @post.user.id == current_user.id %>
+    <% if @post.user == current_user %>
     <%= link_to 'Revise', edit_post_path(@post), class: 'button'%>
     <%= button_to 'Delete', post_path(@post), class: 'button alert', method: :delete, data: {confirm: "Are you sure you want to delete #{@post.title}"}%>
     <% end %>
