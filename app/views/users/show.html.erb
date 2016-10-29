@@ -45,10 +45,10 @@
         <% @posts.each do |post| %>
         <div class = 'post-header'>
         <%= image_tag post.photo, class: 'thumbnail' %>
-        <h4 class = 'inline'><%=link_to post.title, post_path(post) %></h4>
+        <h2 class = 'post-title'> <%=link_to post.title, post_path(post) %></h2>
         </div>
         <br>
-        <div class = 'text-summary post'><p> <%= post.text_body[0..300] %></p>
+        <div class = 'text-summary'><p> <%= post.text_body[0..300] %></p>
         </div>
         <%= link_to 'Read More', post_path(post)%>
         <hr>

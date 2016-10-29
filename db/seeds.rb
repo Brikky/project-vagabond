@@ -66,7 +66,7 @@ posts = [
     truffaut." },
   { title: 'hipster habits',
     city_id: 1,
-    photo: 'https://pixabay.com/static/uploads/photo/2015/10/02/01/15/travel-967984_960_720.jpg',
+    photo: 'https://c1.staticflickr.com/1/32/62527394_f8d9bfa0e2_b.jpg',
     text_body: "Craft beer leggings waistcoat, irony air plant glossier
     vaporware shabby chic fingerstache forage chia lyft hoodie. Biodiesel
     distillery flexitarian mustache, freegan umami squid. Hell of gluten-free
@@ -132,7 +132,7 @@ do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
   mollit anim id est laborum.' },
   { title: 'lorem ipsum dolor',
     city_id: 1,
-    photo: 'https://pixabay.com/static/uploads/photo/2016/08/01/17/50/travel-1561634_960_720.jpg',
+    photo: 'https://c2.staticflickr.com/6/5026/5597686520_34065fa047_b.jpg',
     text_body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
     do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
