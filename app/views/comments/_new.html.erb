@@ -1,0 +1,5 @@
+<%= form_for @new_comment, :url => comments_path(@new_comment) do |f| %>
+  <p><%= f.text_area :text_body, placeholder: 'What do you think?...', class: 'form-container center' %></p>
+  <p><%= f.hidden_field :post_id, :value => @post.id%></p>
+  <p><%= f.submit 'Add Comment', class: 'button secondary' %></p>
+<% end %>

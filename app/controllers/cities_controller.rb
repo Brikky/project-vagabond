@@ -1,6 +1,5 @@
 class CitiesController < ApplicationController
   def index
-    @cities = City.all
   end
 
   def show
@@ -9,12 +8,10 @@ class CitiesController < ApplicationController
   end
 
   def new
-    @city = City.new
   end
 
   def create
-    @city = City.new(city_params)
-    if @city.save
+    if City.new(city_params).save
       flash[:success] = 'Thanks for exploring this City!'
       redirect_to city_path(@city)
     else
