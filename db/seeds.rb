@@ -162,7 +162,7 @@ do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         culpa qui officia deserunt mollit anim id est laborum.' },
   { title: 'lorem ipsum dolor',
     city_id: 1,
-    photo: 'https://pixabay.com/static/uploads/photo/2015/01/28/23/10/mosque-615415_960_720.jpg',
+    photo: 'https://c1.staticflickr.com/1/32/62527394_f8d9bfa0e2_b.jpg',
     text_body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
      do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
         minim veniam, quis nostrud exercitation ullamco laboris nisi ut
