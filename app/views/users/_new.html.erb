@@ -1,6 +1,5 @@
-<span><h1>Become a Vagabond</h1></span>
-<%= form_for @user, url: '/users' do |f|%>
-<div class='form-container center'>
+<%= form_for User.new, url: '/users' do |f|%>
+<div>
     <div>
         <%= f.text_field :name, placeholder: 'name'%>
     </div>

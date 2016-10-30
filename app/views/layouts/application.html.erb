@@ -17,18 +17,22 @@
     <body>
         <header>
             <div class='header'>
-              <span class="header-link hide-for-small-only"><%= link_to 'Vagabond Tales', root_path %></span>
+              <span class="header-link hide-for-small-only"><%= link_to 'Vagabond Tales', root_path, class: 'header-logo' %></span>
                 <span class="header-link show-for-small-only">
                     <%= link_to "<i class='fa fa-home side-room' aria-hidden='true'></i>".html_safe, root_path %>
                 </span>
 
                 <% unless current_user %>
                 <span class="header-link">
+                  <% unless current_page? login_path %>
                     <%= link_to 'Login', login_path, class: 'side-room' %>
+                  <% end %>
                 </span>
+                <% unless current_page? login_path %>
                 <span class="header-link">
-                    <%= link_to 'Sign Up', new_user_path, class: 'side-room' %>
+                    <%= link_to 'Sign Up', login_path, class: 'side-room' %>
                 </span>
+                <% end %>
             <% else %>
                 <span class="header-link">
                   <%= link_to "<i class='fa fa-globe side-room' aria-hidden='true'></i>".html_safe, cities_path %>
@@ -36,11 +40,12 @@
                 <span class="header-link">
                     <%= link_to "<i class='fa fa-user side-room' aria-hidden='true'></i>".html_safe, user_path(current_user) %>
                 </span>
-                <span class="header-link right">
-                    <%= link_to 'Log Out', logout_path %>
-                </span>
                 <% end %>
             </div><!-- class = header -->
+            <span class="header-link right">
+                <%= link_to "<i class='fa fa-sign-out' aria-hidden='true'></i>".html_safe, logout_path, class: 'show-for-small-only' %>
+                <%= link_to "Log Out", logout_path, class: 'show-for-medium' %>
+            </span>
         </header>
 
         <div class='header-block'></div>

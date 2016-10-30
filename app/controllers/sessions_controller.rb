@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.confirm(params.permit(:email, :password))
     if user
       login(user)
-      redirect_to user
+      redirect_to root_path
     else
       flash[:error] = 'Email or password not found'
       render :new
