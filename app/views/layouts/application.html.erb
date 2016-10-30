@@ -40,12 +40,13 @@
                 <span class="header-link">
                     <%= link_to "<i class='fa fa-user side-room' aria-hidden='true'></i>".html_safe, user_path(current_user) %>
                 </span>
+                </div><!-- class = header -->
+                <span class="header-link right">
+                    <%= link_to "<i class='fa fa-sign-out' aria-hidden='true'></i>".html_safe, logout_path, class: 'show-for-small-only' %>
+                    <%= link_to "Log Out", logout_path, class: 'show-for-medium' %>
+                </span>
                 <% end %>
-            </div><!-- class = header -->
-            <span class="header-link right">
-                <%= link_to "<i class='fa fa-sign-out' aria-hidden='true'></i>".html_safe, logout_path, class: 'show-for-small-only' %>
-                <%= link_to "Log Out", logout_path, class: 'show-for-medium' %>
-            </span>
+
         </header>
 
         <div class='header-block'></div>
