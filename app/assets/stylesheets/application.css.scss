@@ -22,6 +22,15 @@ $color3: rgba(255, 255, 255, 1);
 $color4: rgba(79, 93, 117, 1);
 $color5: rgba(233, 129, 34, 1);
 
+@media (max-width: 600px) {
+  header{
+    bottom: 0;
+  }
+  .side-room {
+    margin-left: 2em !important;
+  }
+}
+
 body {
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 100;
