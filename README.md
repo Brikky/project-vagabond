@@ -94,16 +94,16 @@ ___
 ___
 Main Page
 
-![Index](http://i.imgur.com/QPUkh9T.png)
+![Index](http://i.imgur.com/NGRX1SI.png)
 
 Post Show Page
 
-![Post Show](http://i.imgur.com/ljobHJW.png)
+![Post Show](http://i.imgur.com/cIcoqmA.png)
 
 User Profile Page
 
-![User Show](http://i.imgur.com/Lm7MOSH.png)
+![User Show](http://i.imgur.com/z8kOCKQ.png)
 
 City Show Page
 
-![City Show](http://i.imgur.com/vz5uXj7.png)
+![City Show](http://i.imgur.com/GkUzOib.jpg)
