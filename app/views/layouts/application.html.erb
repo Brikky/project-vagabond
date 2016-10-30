@@ -24,11 +24,15 @@
 
                 <% unless current_user %>
                 <span class="header-link">
+                  <% unless current_page? login_path %>
                     <%= link_to 'Login', login_path, class: 'side-room' %>
+                  <% end %>
                 </span>
+                <% unless current_page? login_path %>
                 <span class="header-link">
-                    <%= link_to 'Sign Up', new_user_path, class: 'side-room' %>
+                    <%= link_to 'Sign Up', login_path, class: 'side-room' %>
                 </span>
+                <% end %>
             <% else %>
                 <span class="header-link">
                   <%= link_to "<i class='fa fa-globe side-room' aria-hidden='true'></i>".html_safe, cities_path %>
