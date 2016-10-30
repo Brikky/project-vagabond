@@ -1,0 +1,29 @@
+<%= form_for User.new, url: '/users' do |f|%>
+<div>
+    <div>
+        <%= f.text_field :name, placeholder: 'name'%>
+    </div>
+    <div>
+        <%= f.text_field :profile_photo, placeholder: 'profile photo url' %>
+    </div>
+    <div class = 'vertical-center'>
+        <div class = "columns small-9 no-padding">
+            <%= f.collection_select :current_city, City.all, :id, :name_state%>
+        </div>
+        <div class = "columns small-3">
+            <%= link_to 'Add New', new_city_path, class: 'button secondary'%>
+        </div>
+    </div>
+    <div>
+        <%= f.email_field :email, placeholder: 'email' %>
+    </div>
+    <div>
+        <%= f.password_field :password, placeholder: 'password' %>
+    </div>
+    <div>
+        <%= f.password_field :password_confirm, placeholder: 'confirm password' %>
+    </div>
+
+    <%= f.submit 'Join', class: 'button'%>
+    <% end %>
+</div>
