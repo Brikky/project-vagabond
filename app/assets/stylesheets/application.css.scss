@@ -15,13 +15,6 @@
  *= require foundation_and_overrides
  *= require font-awesome
  /*= require foundation */
-*/
-/* HSL */
-$color1: hsla(229%, 19%, 22%, 1);
-$color2: hsla(180%, 1%, 75%, 1);
-$color3: hsla(0%, 0%, 100%, 1);
-$color4: hsla(218%, 19%, 38%, 1);
-$color5: hsla(29%, 89%, 58%, 1);
 /* RGB */
 $color1: rgba(45, 49, 66, 1);
 $color2: rgba(191, 192, 192, 1);
@@ -39,13 +32,23 @@ header {
     position: fixed;
     width: 100%;
     background-color: $color3;
-    height: 2em;
+    height: 50px;
     display: flex;
     align-content: center;
-    font-size: 2em;
     display: flex;
     clear: both;
     box-shadow: 1px 1px 1px $color2;
+}
+.header{
+  padding-left: 5%;
+  width: 85%;
+  display: flex;
+  align-items: center;
+}
+
+.right{
+  display: flex;
+  align-self: flex-end;
 }
 
 h2 {
@@ -58,18 +61,21 @@ h3,
 h4 {
     margin: 0;
     font-weight: 200;
-    text-shadow: -2px 2px 3px  $color2;
+    text-shadow: -2px 2px 3px $color2;
 }
-a{
-  color: $color5;
+
+a {
+    color: $color5;
 }
-a:hover{
-  color: rgba(240, 167, 98, 1);
-  text-shadow: 0 1px 2px rgba(172, 172, 168,.5);
+
+a:hover {
+    color: rgba(240, 167, 98, 1);
+    text-shadow: 0 1px 2px rgba(172, 172, 168,.5);
 }
-.button:hover{
-  background-color: rgba(240, 167, 98, 1);
-  box-shadow: 0 2px 5px rgb(172, 172, 168);
+
+.button:hover {
+    background-color: rgba(240, 167, 98, 1);
+    box-shadow: 0 2px 5px rgb(172, 172, 168);
 }
 
 textarea {
@@ -80,10 +86,6 @@ input,
 select,
 textarea {
     border-radius: 10px !important;
-}
-
-.header {
-    width: 100%;
 }
 
 .header-block {
@@ -98,7 +100,13 @@ textarea {
     justify-content: center;
 }
 
-.header-link {}
+.header-logo {
+    font-size: 1.5em;
+}
+
+.header-link {
+    font-size: 1.5em;
+}
 
 .profile-top {
     background-color: $color5;
@@ -142,7 +150,6 @@ textarea {
 .personal-info,
 .posts-container {
     margin: 2em 0;
-
 }
 
 .right {
@@ -238,19 +245,23 @@ em {
 .post-header {
     text-align: center;
 }
-.space{
-  margin: 1em;
+
+.space {
+    margin: 1em;
 }
-.non-collapse{
-  height: 1px;
+
+.non-collapse {
+    height: 1px;
 }
-.stretch{
-  margin-bottom: 1em;
-  height: 70vmin;
-  overflow: hidden;
-  display: block;
+
+.stretch {
+    margin-bottom: 1em;
+    height: 70vmin;
+    overflow: hidden;
+    display: block;
 }
-.phone-image{
-  max-height: 550px;
-  margin-top: 2.5em;
+
+.phone-image {
+    max-height: 550px;
+    margin-top: 2.5em;
 }
