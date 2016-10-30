@@ -19,7 +19,7 @@
             <div class='header'>
               <span class="header-link hide-for-small-only"><%= link_to 'Vagabond Tales', root_path %></span>
                 <span class="header-link show-for-small-only">
-                    <%= link_to "<i class='fa fa-home' aria-hidden='true'></i>".html_safe, root_path %>
+                    <%= link_to "<i class='fa fa-home side-room' aria-hidden='true'></i>".html_safe, root_path %>
                 </span>
 
                 <% unless current_user %>
@@ -31,10 +31,10 @@
                 </span>
             <% else %>
                 <span class="header-link">
-                  <%= link_to "<i class='fa fa-globe' aria-hidden='true'></i>".html_safe, cities_path %>
+                  <%= link_to "<i class='fa fa-globe side-room' aria-hidden='true'></i>".html_safe, cities_path %>
                 </span>
                 <span class="header-link">
-                    <%= link_to "<i class='fa fa-user' aria-hidden='true'></i>".html_safe, user_path(current_user) %>
+                    <%= link_to "<i class='fa fa-user side-room' aria-hidden='true'></i>".html_safe, user_path(current_user) %>
                 </span>
                 <span class="header-link right">
                     <%= link_to 'Log Out', logout_path %>
