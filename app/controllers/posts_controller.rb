@@ -19,13 +19,7 @@ class PostsController < ApplicationController
     post.city_id = params[:post][:city_id].to_i if post.user_id && !post.city_id
     post.photo = post.city.photo if post.photo == ''
 
-    if post.save
-      flash[:success] = "That's a great story!"
-      redirect_to post_path(post)
-    else
-      flash[:error] = post.errors.full_messages.to_sentence
-      render :new
-    end
+    confirm_save(post)
   end
 
   def show
@@ -59,4 +53,14 @@ class PostsController < ApplicationController
   def authorize
     redirect_to :back unless current_user == @post.user
   end
+
+  def confirm_save(post)
+    if post.save
+      flash[:success] = "That's a great story!"
+      redirect_to post_path(post)
+    else
+      flash[:error] = post.errors.full_messages.to_sentence
+      render :new
+    end
+  end 
 end

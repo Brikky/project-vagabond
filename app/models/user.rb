@@ -19,6 +19,6 @@ class User < ApplicationRecord
   end
 
   def set_default_photo
-    self.profile_photo ||= 'http://i.imgur.com/K7PSKI4.png'
+    profile_photo = 'http://i.imgur.com/K7PSKI4.png' if profile_photo == ''
   end
 end

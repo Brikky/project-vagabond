@@ -1,9 +1,9 @@
 <h1>Welcome to the Campfire</h1>
 <h3 class = 'up'>read some stories</h3>
 <% if current_user %>
-<%= link_to 'or tell your own', new_user_post_path(current_user), class: 'rock-salt bigger' %>
+<%= link_to 'or write your own', new_user_post_path(current_user), class: 'rock-salt bigger' %>
 <% else %>
-<%= link_to 'or tell your own', login_path, class: 'rock-salt bigger' %>
+<%= link_to 'or write your own', login_path, class: 'rock-salt bigger' %>
 <% end %>
 <br>
 <br>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161027160309) do
+ActiveRecord::Schema.define(version: 20161101054921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,9 +53,9 @@ ActiveRecord::Schema.define(version: 20161027160309) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "current_city"
-    t.string   "profile_photo"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "profile_photo",   default: "http://i.imgur.com/K7PSKI4.png"
+    t.datetime "created_at",                                                 null: false
+    t.datetime "updated_at",                                                 null: false
     t.string   "slug"
     t.index ["slug"], name: "index_users_on_slug", using: :btree
   end

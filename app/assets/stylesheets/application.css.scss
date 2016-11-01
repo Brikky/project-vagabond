@@ -17,15 +17,15 @@
  /*= require foundation */
 /* RGB */
 $color1: rgba(45, 49, 66, 1);
-$color2: rgba(191, 192, 192, 1);
+$color2: rgba(168, 189, 189, 1);
 $color3: rgba(255, 255, 255, 1);
 $color4: rgba(79, 93, 117, 1);
-$color5: rgba(233, 129, 34, 1);
+$color5: rgba(30, 158, 221, 1);
 
 @media (max-width: 600px) {
   header{
     bottom: 0;
-   border-top: 1px solid $color2;
+    border-top: 1px solid $color2;
   }
   .side-room {
     margin-left: 2em !important;
@@ -49,6 +49,7 @@ header {
     clear: both;
     box-shadow: 1px 1px 1px $color2;
 }
+
 .header{
   padding-left: 5%;
   width: 85%;
@@ -61,17 +62,20 @@ header {
   align-self: flex-end;
 }
 
-h2 {
-    font-family: 'Rock Salt';
-}
-
 h1,
 h2,
 h3,
 h4 {
     margin: 0;
-    font-weight: 200;
-    text-shadow: -2px 2px 3px $color2;
+    font-family: 'Crimson Text', serif;
+    text-shadow: -1px 1px 3px $color2;
+}
+h3,
+h4{
+  margin: 0;
+  text-shadow: 0;
+  font-family: 'Crimson Text', serif;
+
 }
 
 a {
@@ -79,12 +83,12 @@ a {
 }
 
 a:hover {
-    color: rgba(240, 167, 98, 1);
+    color: lighten($color5, 5);
     text-shadow: 0 1px 2px rgba(172, 172, 168,.5);
 }
 
 .button:hover {
-    background-color: rgba(240, 167, 98, 1);
+    background-color: lighten($color5, 5);
     box-shadow: 0 2px 5px rgb(172, 172, 168);
 }
 
@@ -201,7 +205,7 @@ textarea {
 
 .post {
     margin: 0 auto 1em;
-    width: 85%;
+    width: 65%;
 }
 
 .post p {
@@ -250,6 +254,11 @@ em {
     text-align: left;
     width: 80%;
     margin: 0 auto;
+    word-wrap: break-word;
+}
+
+.post p{
+  word-wrap: break-word;
 }
 
 .post-header {
@@ -274,4 +283,9 @@ em {
 .phone-image {
     max-height: 550px;
     margin-top: 2.5em;
+}
+
+.post-title{
+  text-shadow: none;
+  font-weight: 500;
 }
