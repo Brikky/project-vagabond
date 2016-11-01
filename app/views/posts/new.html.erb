@@ -1,6 +1,6 @@
 <div class="form-container center">
 <h1>Tell Your Story</h1>
-<%= form_for @post do |f| %>
+<%= form_for Post.new do |f| %>
 <%= f.text_field :title, placeholder: 'title' %>
 <br>
 

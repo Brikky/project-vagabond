@@ -3,17 +3,14 @@ class UsersController < ApplicationController
   before_action :logged_in?, only: [:show, :edit, :update]
 
   def new
-    @user = User.new
+    @new_user = User.new
   end
 
   def create
     @user = User.new(user_params)
-    if @user.profile_photo == ''
-      @user.profile_photo = 'http://i.imgur.com/K7PSKI4.png'
-    end
     if @user.save
       login(@user)
-      flash[:success] = 'Welcome to Vagabond!'
+      flash[:success] = 'Welcome to Vagabond Tales!'
       redirect_to user_path(@user)
     else
       flash[:error] = @user.errors.full_messages.to_sentence

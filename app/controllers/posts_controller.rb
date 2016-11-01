@@ -3,43 +3,33 @@ class PostsController < ApplicationController
   before_action :get_post, only: [:show, :edit, :update, :destroy]
   before_action :authorize, only: [:edit, :update, :destroy]
 
-  def user_index
-  end
-
-  def city_index
+  def index
+    @posts = Post.all.order(created_at: :desc)
+    if @posts.length > 10
+      @posts = Post.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
+    end
   end
 
   def new
-    @post = Post.new
-    @user = current_user
   end
 
   def create
-    @user = current_user
-    @post = current_user.posts.create(post_params)
+    post = current_user.posts.create(post_params)
 
-    @post.city_id = params[:post][:city_id].to_i if @post.user_id && !@post.city_id
+    post.city_id = params[:post][:city_id].to_i if post.user_id && !post.city_id
+    post.photo = post.city.photo if post.photo == ''
 
-    @post.photo = @post.city.photo if @post.photo == ''
-
-    if @post.save
+    if post.save
       flash[:success] = "That's a great story!"
-      redirect_to post_path(@post)
+      redirect_to post_path(post)
     else
-      flash[:error] = @post.errors.full_messages.to_sentence
+      flash[:error] = post.errors.full_messages.to_sentence
       render :new
     end
   end
 
   def show
     @new_comment = Comment.new
-  end
-
-  def index
-    @posts = Post.all.order(created_at: :desc)
-    if @posts.length > 10
-      @posts = Post.order(created_at: :desc).paginate(page: params[:page], per_page: 10)
-    end
   end
 
   def edit
@@ -66,7 +56,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def authorize 
+  def authorize
     redirect_to :back unless current_user == @post.user
   end
 end
