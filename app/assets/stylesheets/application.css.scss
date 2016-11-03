@@ -24,13 +24,17 @@ $color5: rgba(30, 158, 221, 1);
 
 $title-font: 'Roboto Condensed', sans-serif;
 $body-font: 'Crimson Text', serif;
+
 @media (max-width: 600px) {
   header{
     bottom: 0;
     border-top: 1px solid $color2;
   }
   .side-room {
-    margin-left: 2em !important;
+    margin-left: 1.25em !important;
+  }
+  .header{
+    margin: 0 auto !important;
   }
 }
 
